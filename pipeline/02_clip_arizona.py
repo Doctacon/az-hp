@@ -1,3 +1,4 @@
+import shutil
 import sys
 from pathlib import Path
 
@@ -7,6 +8,9 @@ import geopandas as gpd
 from pipeline.utils import RAW_DIR, PROCESSED_DIR
 
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+
+# Threshold for skipping clip - files larger than this are just copied
+LARGE_LAYER_THRESHOLD = 100_000_000  # 100 MB
 
 
 def load_az_boundary():
@@ -23,7 +27,16 @@ def clip_layer(input_name: str, output_name: str, az_boundary: gpd.GeoDataFrame)
         print(f"  Skipping {input_name} (not found)")
         return
 
-    print(f"  Clipping {input_name}...")
+    # Skip clip for large files - just copy them
+    file_size = input_path.stat().st_size
+    if file_size > LARGE_LAYER_THRESHOLD:
+        print(f"  Copying {input_name} ({file_size / 1_000_000:.1f} MB - too large for clip)...")
+        shutil.copy(input_path, output_path)
+        print(f"    Copied without clipping")
+        return
+
+    # Normal clip for smaller layers
+    print(f"  Clipping {input_name} ({file_size / 1_000_000:.1f} MB)...")
     gdf = gpd.read_parquet(input_path)
     gdf = gdf.set_crs("EPSG:4326", allow_override=True)
 
