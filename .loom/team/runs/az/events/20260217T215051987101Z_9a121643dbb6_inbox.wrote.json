@@ -1,0 +1,51 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/az/worktrees/merge-queue",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%89",
+    "pid": 58323,
+    "role": "integrator",
+    "ticket_id": "",
+    "worker_id": "integrator"
+  },
+  "data": {
+    "bytes": 89,
+    "from": "team",
+    "meta": {
+      "backoff_s": 1.0,
+      "pane_id": "%89",
+      "rc": -9,
+      "recipient": "integrator",
+      "run_id": "0ddfe344209a41a2b71b8577ce21f014",
+      "sprint": {
+        "name": "fix-make-all",
+        "rev": 1,
+        "slug": "fix-make-all",
+        "started_at": "2026-02-17T18:44:44.921715Z",
+        "tag": "sprint:fix-make-all"
+      },
+      "target": "manager"
+    }
+  },
+  "error": {},
+  "id": "9a121643dbb6",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "af2032a3ed6a",
+    "kind": "sidecar",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "",
+    "session": "",
+    "team": "az"
+  },
+  "summary": "Inbox wrote kind=sidecar to=manager id=af2032a3ed6a",
+  "ts": "2026-02-17T21:50:51.987101Z",
+  "type": "inbox.wrote",
+  "v": 1
+}

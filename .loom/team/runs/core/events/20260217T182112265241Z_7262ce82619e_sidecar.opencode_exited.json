@@ -9,12 +9,11 @@
     "worker_id": ""
   },
   "data": {
-    "backoff_s": 1.0,
-    "pid": 4334
+    "rc": -9
   },
   "error": {},
-  "id": "b05bd77e31b0",
-  "ok": true,
+  "id": "7262ce82619e",
+  "ok": false,
   "op": {
     "op_id": "",
     "parent_op_id": ""
@@ -28,8 +27,8 @@
     "session": "team-core",
     "team": "core"
   },
-  "summary": "opencode spawned recipient=manager pid=4334",
-  "ts": "2026-02-17T17:05:50.041083Z",
-  "type": "sidecar.opencode_spawned",
+  "summary": "opencode exited recipient=manager rc=-9",
+  "ts": "2026-02-17T18:21:12.265241Z",
+  "type": "sidecar.opencode_exited",
   "v": 1
 }
