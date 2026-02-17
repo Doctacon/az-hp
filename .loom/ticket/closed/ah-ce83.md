@@ -1,10 +1,11 @@
 ---
 "id": "ah-ce83"
-"status": "open"
+"status": "closed"
 "deps":
 - "ah-cc7e"
 - "ah-d2c5"
-"links": []
+"links":
+- "ah-a536"
 "created": "2026-02-17T17:14:58Z"
 "type": "task"
 "priority": 2
@@ -96,3 +97,46 @@ ls -la frontend/public/data/
 ## Acceptance Criteria
 
 make enrich completes; roads_enriched.parquet and places_hunt.parquet exist in data/processed/
+
+## Notes
+
+**2026-02-17T17:54:27Z**
+
+## Progress Update
+
+### Completed
+- Symlinked data directory from main repo (dependencies ah-cc7e, ah-d2c5 artifacts)
+- Copied raw places file to processed (clip skip for large layers per ah-d2c5 recommendation)
+- Fixed two bugs in enrich.py that prevented pipeline from running:
+  1. `index_right` column conflict between sequential spatial joins
+  2. Numpy array truthiness issue in POI category filtering
+- Ran `make enrich` successfully
+
+### Results
+- `roads_enriched.parquet`: 1,246,257 road segments with land_status and GMUNAME columns
+- `places_hunt.parquet`: 1,665 hunt-relevant POIs
+- Static layers copied to frontend/public/data/
+
+### Acceptance Criteria - ALL MET
+- [x] `make enrich` completes without errors
+- [x] `data/processed/roads_enriched.parquet` exists (240 MB)
+- [x] `roads_enriched.parquet` has `land_status` column
+- [x] `roads_enriched.parquet` has `GMUNAME` column
+- [x] `data/processed/places_hunt.parquet` exists (149 KB)
+- [x] `frontend/public/data/azgfd_gmu.geojson` exists (14.7 MB)
+- [x] `frontend/public/data/blm_sma_az.geojson` exists (8.9 KB)
+
+### Known Issue (Out of Scope)
+All roads show `private_or_unknown` land status because BLM SMA data is incomplete (missing BLM and State Trust land). This is documented in STATUS.md and requires a separate fix.
+
+### Files Changed
+- `pipeline/03_enrich.py` - Bug fixes for sequential spatial joins and numpy array handling
+
+**2026-02-17T17:56:45Z**
+
+## Follow-up Ticket Created
+
+Created ah-a536 "Fix BLM SMA data to include BLM and State Trust land" to address the incomplete land ownership data. This is out of scope for this ticket but is critical for the road access feature to work correctly.
+
+## Awaiting Review
+Ready for manager review. Commit 1b29444 on branch team/ah-ce83.
