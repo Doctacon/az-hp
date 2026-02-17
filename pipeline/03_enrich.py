@@ -55,6 +55,9 @@ def enrich_roads():
 
     roads_with_owner["land_status"] = roads_with_owner.apply(map_agency_code, axis=1)
 
+    # Drop index_right before second join to avoid column name conflict
+    roads_with_owner = roads_with_owner.drop(columns=["index_right"], errors="ignore")
+
     print("  Spatial join: roads x hunt units...")
     gmu_cols = ["geometry", "GMUNAME", "REG_NAME", "ACRES", "AGFDLink"]
     gmus_filtered = gmus[[c for c in gmu_cols if c in gmus.columns]]
@@ -133,13 +136,15 @@ def filter_hunt_pois():
         if isinstance(categories, dict):
             primary = categories.get("primary", "")
             alternate = categories.get("alternate", [])
-            cat_str = f"{primary} {' '.join(alternate if alternate else [])}".lower()
+            alt_str = " ".join(alternate) if alternate is not None and len(alternate) > 0 else ""
+            cat_str = f"{primary} {alt_str}".lower()
         elif isinstance(categories, str):
             try:
                 parsed = json.loads(categories)
                 primary = parsed.get("primary", "")
                 alternate = parsed.get("alternate", [])
-                cat_str = f"{primary} {' '.join(alternate if alternate else [])}".lower()
+                alt_str = " ".join(alternate) if alternate is not None and len(alternate) > 0 else ""
+                cat_str = f"{primary} {alt_str}".lower()
             except:
                 cat_str = categories.lower()
         elif isinstance(categories, list):
