@@ -1,0 +1,41 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%75",
+    "pid": 4253,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "agent": "loom-team-manager",
+    "cooldown_s": 300.0,
+    "harness": "opencode",
+    "model": "",
+    "project_dir": "/Users/crlough/Code/personal/az-hp",
+    "respawn_cap": 3,
+    "respawn_window_s": 3600.0,
+    "stall_s": 1080.0
+  },
+  "error": {},
+  "id": "616235cf582e",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%75",
+    "recipient": "manager"
+  },
+  "run": {
+    "run_id": "794bda0ac36a4c5d80b3325da461df60",
+    "session": "team-core",
+    "team": "core"
+  },
+  "summary": "Sidecar started recipient=manager",
+  "ts": "2026-02-17T17:05:50.034673Z",
+  "type": "sidecar.started",
+  "v": 1
+}

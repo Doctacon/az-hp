@@ -1,0 +1,35 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%75",
+    "pid": 4253,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "backoff_s": 1.0,
+    "pid": 4334
+  },
+  "error": {},
+  "id": "b05bd77e31b0",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%75",
+    "recipient": "manager"
+  },
+  "run": {
+    "run_id": "794bda0ac36a4c5d80b3325da461df60",
+    "session": "team-core",
+    "team": "core"
+  },
+  "summary": "opencode spawned recipient=manager pid=4334",
+  "ts": "2026-02-17T17:05:50.041083Z",
+  "type": "sidecar.opencode_spawned",
+  "v": 1
+}
