@@ -10,9 +10,14 @@ wheels/
 .venv
 
 # Data directories (large files, download separately)
-data/raw/
-data/processed/
-data/tiles/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/tiles/*
+!data/tiles/.gitkeep
+frontend/public/data/*
+!frontend/public/data/.gitkeep
 
 # Frontend build artifacts
 frontend/node_modules/
