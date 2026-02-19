@@ -1,0 +1,22 @@
+{
+  "acked_at": "2026-02-18T01:56:27.129730Z",
+  "created_at": "2026-02-18T01:53:28.322518Z",
+  "from": "team",
+  "id": "30e373b410af",
+  "kind": "send",
+  "message": "[Sprint: map display fix] INVESTIGATION REQUEST: The objective is that 'make dev-frontend' shows the legend but NO MAP at all - the map is completely missing. Please: 1) Reproduce the issue by running 'make dev-frontend' and examining what's happening, 2) Identify root cause of why the map tiles/layers aren't rendering, 3) Review the 3 existing tickets (ah-58db, ah-a536, ah-ad64) - determine if they're still relevant or if this is a different issue, 4) Create crisp tickets for any new issues found. Focus on: why is the map not displaying at all? Report back with findings and a ticket plan.",
+  "meta": {
+    "recipient": "w1",
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "sprint": {
+      "name": "map display fix",
+      "rev": 1,
+      "slug": "map-display-fix",
+      "started_at": "2026-02-18T01:53:14.621599Z",
+      "tag": "sprint:map-display-fix"
+    },
+    "target": "w1",
+    "team": "mapping-issues"
+  },
+  "to": "w1"
+}

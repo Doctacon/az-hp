@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Sprint prep: map display fix investigation                                                                                                                  40,306  20% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  - Blocked by: ah-d095 (Fix ArcGIS JSON) if land ownership layer fails to render                                                                                                     
+  ┃  EOF                                                                                                                                                                                 
+  ┃  )"                                                                                                                                                                                  
+  ┃                                                                                                                                                                                      
+  ┃  ah-ed69                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  Thinking: Now I should add the dependencies between the tickets. Let me check the ticket IDs and add dependencies.                                                                  
+  ┃                                                                                                                                                                                      
+  ┃  - ah-2fa8: Run full data pipeline (no deps, first step)                                                                                                                             
+  ┃  - ah-d095: Fix ArcGIS JSON format (depends on ah-2fa8)                                                                                                                              
+  ┃  - ah-ed69: Verify map renders (depends on ah-2fa8 and ah-d095)                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Add ticket dependencies                                                                                                                                                           
+  ┃                                                                                                                                                                                      
+  ┃  $ loom ticket dep-add ah-d095 ah-2fa8 && loom ticket dep-add ah-ed69 ah-2fa8 && loom ticket dep-add ah-ed69 ah-d095                                                                 
+  ┃                                                                                                                                                                                      
+  ┃  Added dependency: ah-d095 -> ah-2fa8                                                                                                                                                
+  ┃  Added dependency: ah-ed69 -> ah-2fa8                                                                                                                                                
+  ┃  Added dependency: ah-ed69 -> ah-d095                                                                                                                                                
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  Thinking: Now let me verify the tickets were created correctly and show them.                                                                                                       
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # List sprint tickets                                                                                                                                                               
+  ┃                                                                                                                                                                                      
+  ┃  $ loom ticket list -T sprint:map-display-fix                                                                                                                                        
+  ┃                                                                                                                                                                                      
+  ┃  # Tickets (4)                                                                                                                                                                       
+  ┃  - `ah-2fa8` P1 open - Run full data pipeline to generate map data                                                                                                                   
+  ┃  - `ah-ed69` P1 open - Verify map renders with all layers (deps:ah-2fa8,ah-d095)                                                                                                     
+  ┃  - `ah-d095` P2 open - Fix ArcGIS JSON format in BLM SMA data (deps:ah-2fa8)                                                                                                         
+  ┃  - `ah-174b` P1 in_progress - Sprint prep: map display fix                                                                                                                           
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+     ▣  Loom-Team-Investigator · glm-5                                                                                                                                                   
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Investigator  GLM-5 Z.AI Coding Plan                                                                                                                                      
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ⬝⬝⬝⬝⬝⬝⬝⬝  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         

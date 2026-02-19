@@ -1,0 +1,43 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 22499,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "base_ref": "main",
+    "config": {
+      "push": true,
+      "remote": "origin",
+      "target_branch": "main"
+    },
+    "forced": false
+  },
+  "error": {},
+  "id": "9ae91142bf71",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "branch": "team/merge-queue-ce0bff71",
+    "pane_id": "%95",
+    "window": "integrator",
+    "worker_id": "integrator",
+    "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Spawned integrator worker_id=integrator",
+  "ts": "2026-02-18T02:37:43.302449Z",
+  "type": "integrator.spawned",
+  "v": 1
+}

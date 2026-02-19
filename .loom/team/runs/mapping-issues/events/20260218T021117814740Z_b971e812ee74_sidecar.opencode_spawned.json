@@ -1,0 +1,35 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-2fa8",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%94",
+    "pid": 30628,
+    "role": "worker",
+    "ticket_id": "ah-2fa8",
+    "worker_id": "w2"
+  },
+  "data": {
+    "backoff_s": 1.0,
+    "pid": 30689
+  },
+  "error": {},
+  "id": "b971e812ee74",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%94",
+    "recipient": "w2"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "opencode spawned recipient=w2 pid=30689",
+  "ts": "2026-02-18T02:11:17.814740Z",
+  "type": "sidecar.opencode_spawned",
+  "v": 1
+}

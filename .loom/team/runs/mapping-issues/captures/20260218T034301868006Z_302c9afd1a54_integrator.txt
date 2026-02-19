@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Team Integrator: mapping-issues merge-queue status                                                                                                           10,038  5% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  MERGE_TARGET: origin/main  push=True                                                                                                                                                
+  ┃                                                                                                                                                                                      
+  ┃  HARD CONSTRAINTS:                                                                                                                                                                   
+  ┃  - Do NOT run tmux directly.                                                                                                                                                         
+  ┃  - Do not implement features; ship only manager-approved branches.                                                                                                                   
+  ┃  - You do NOT merge into the target branch. You only merge into the merge-queue branch shown above.                                                                                  
+  ┃  - If your merge worktree is wedged, ask the manager to run: `loom team spawn-integrator <TEAM> --force`.                                                                            
+  ┃  - Use `loom team merge` commands for deterministic queue operations.                                                                                                                
+  ┃                                                                                                                                                                                      
+  ┃  Queue ops:                                                                                                                                                                          
+  ┃  - Claim next: `loom team merge mapping-issues next --claim-by integrator`                                                                                                           
+  ┃  - Mark done: `loom team merge mapping-issues done <ITEM_ID> --result merged|blocked --note "..."`                                                                                   
+  ┃  - Manager ships merge-queue -> target with: `loom team ship mapping-issues`                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  Idling: If no work, run `loom team wait 10m` and stop output.                                                                                                                       
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  Thinking: I'm the Team Integrator for the mapping-issues team. My role is to serialize merges and ship code fast under manager authority. Let me check the merge queue to see if    
+  ┃  there's any work to do.                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+  ┃  First, I should claim the next item from the queue.                                                                                                                                 
+                                                                                                                                                                                         
+     I'm the Team Integrator for the mapping-issues team. Let me check the merge queue for work.                                                                                         
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Claim next merge queue item                                                                                                                                                       
+  ┃                                                                                                                                                                                      
+  ┃  $ loom team merge mapping-issues next --claim-by integrator                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  (empty)                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+     ▣  Loom-Team-Integrator · glm-5                                                                                                                                                     
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM merge_queue enqueued id=b3dc316a40 ticket=ah-2fa8 branch=team/ah-2fa8                                                                                                          
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Integrator  GLM-5 Z.AI Coding Plan                                                                                                                                        
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ■■■■■⬝⬝⬝  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         

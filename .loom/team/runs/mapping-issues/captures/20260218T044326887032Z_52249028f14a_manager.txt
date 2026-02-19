@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Team Mapping-issues: Loom sprint plan for frontend map bug fix                                                                                              41,829  20% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Manager  GLM-5 Z.AI Coding Plan                                                                                                                                           
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ⬝⬝⬝⬝⬝⬝⬝⬝  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         

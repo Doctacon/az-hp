@@ -1,0 +1,22 @@
+{
+  "acked_at": "2026-02-18T02:37:24.864205Z",
+  "created_at": "2026-02-18T02:37:10.186102Z",
+  "from": "team",
+  "id": "01e9953ecf3f",
+  "kind": "send",
+  "message": "[Sprint: map display fix] READY_FOR_REVIEW ticket=ah-2fa8 worker=w2 branch=team/ah-2fa8 sha=35ae8e4 summary=Pipeline completed successfully. All 7 required data files generated in frontend/public/data/. verify=ls -la frontend/public/data/ && du -h frontend/public/data/*. Generated: roads.pmtiles (301M), water.pmtiles (123M), landcover.pmtiles (128M), buildings.pmtiles (232M), places.pmtiles (1.4M), azgfd_gmu.geojson (14M), blm_sma_az.geojson (12K). Note: Data files are in .gitignore as expected for large generated files. risks=BLM API returned 500 errors for BLM (layer 7) and STATE (layer 14) layers - this is expected/acceptable per ticket spec.",
+  "meta": {
+    "recipient": "manager",
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "sprint": {
+      "name": "map display fix",
+      "rev": 1,
+      "slug": "map-display-fix",
+      "started_at": "2026-02-18T01:53:14.621599Z",
+      "tag": "sprint:map-display-fix"
+    },
+    "target": "manager",
+    "team": "mapping-issues"
+  },
+  "to": "manager"
+}

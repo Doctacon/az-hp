@@ -1,0 +1,22 @@
+{
+  "acked_at": "2026-02-18T02:06:35.563229Z",
+  "created_at": "2026-02-18T02:05:36.462319Z",
+  "from": "team",
+  "id": "b8fb1a9c8ea4",
+  "kind": "send",
+  "message": "[Sprint: map display fix] UPDATED OBJECTIVE: Also investigate why the data pipeline takes over 15 minutes. Identify bottlenecks and potential optimizations. This should be added to the ticket set or as a new ticket if needed. Report back with your final findings and ticket plan.",
+  "meta": {
+    "recipient": "w1",
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "sprint": {
+      "name": "map display fix",
+      "rev": 1,
+      "slug": "map-display-fix",
+      "started_at": "2026-02-18T01:53:14.621599Z",
+      "tag": "sprint:map-display-fix"
+    },
+    "target": "w1",
+    "team": "mapping-issues"
+  },
+  "to": "w1"
+}

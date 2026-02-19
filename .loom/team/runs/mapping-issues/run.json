@@ -1,0 +1,149 @@
+{
+  "claude": {
+    "bin": "",
+    "integrator_agent": "loom-team-integrator",
+    "investigator_agent": "loom-team-investigator",
+    "manager_agent": "loom-team-manager",
+    "model": "",
+    "models": {
+      "integrator": "",
+      "investigator": "",
+      "manager": "",
+      "worker": ""
+    },
+    "worker_agent": "loom-team-worker"
+  },
+  "created_at": "2026-02-18T01:52:32.065344Z",
+  "defaults": {
+    "base_ref": "main"
+  },
+  "done_reminder": {},
+  "harness": "opencode",
+  "limits": {
+    "max_headcount": 0
+  },
+  "manager": {
+    "merge_target": "origin/main push=True",
+    "pane_id": "%92",
+    "window": "manager"
+  },
+  "merge": {
+    "branch": "team/merge-queue-ce0bff71",
+    "config": {
+      "push": true,
+      "remote": "origin",
+      "target_branch": "main"
+    },
+    "items": [
+      {
+        "branch": "team/ah-2fa8",
+        "claimed_at": "",
+        "claimed_by": "",
+        "done_at": "",
+        "enqueued_at": "2026-02-18T02:37:55.292992Z",
+        "from_worker": "w2",
+        "id": "b3dc316a40",
+        "note": "",
+        "result": "",
+        "result_note": "",
+        "state": "queued",
+        "ticket_id": "ah-2fa8"
+      }
+    ],
+    "worker_id": "integrator",
+    "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue"
+  },
+  "mounts": [],
+  "objective": "the localhost viewing via make dev-frontend is showing the legend, but no map whatsoever. the app is not complete until i can view the ultimate product\n\n---\n\n## Update 2026-02-18T02:05:29.135326Z\n\nAdditionally: investigate why the data pipeline takes over 15 minutes. Identify bottlenecks and potential optimizations.\n",
+  "objective_rev": 2,
+  "objective_updated_at": "2026-02-18T02:05:29.135326Z",
+  "opencode": {
+    "bin": "",
+    "integrator_agent": "loom-team-integrator",
+    "investigator_agent": "loom-team-investigator",
+    "manager_agent": "loom-team-manager",
+    "model": "",
+    "models": {
+      "integrator": "",
+      "investigator": "",
+      "manager": "",
+      "worker": ""
+    },
+    "worker_agent": "loom-team-worker"
+  },
+  "ops": {
+    "manager": {
+      "checkin": {
+        "timeout_streak": 0,
+        "updated_at": 1771382230.195081
+      }
+    }
+  },
+  "repo_root": "/Users/crlough/Code/personal/az-hp",
+  "run_dir": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues",
+  "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+  "session": "team-mapping-issues",
+  "sprint": {
+    "name": "map display fix",
+    "rev": 1,
+    "slug": "map-display-fix",
+    "started_at": "2026-02-18T01:53:14.621599Z",
+    "tag": "sprint:map-display-fix",
+    "updated_at": "2026-02-18T01:53:14.621727Z"
+  },
+  "team": "mapping-issues",
+  "tickets_dir": "/Users/crlough/Code/personal/az-hp/.loom/ticket",
+  "updated_at": "2026-02-18T04:50:55.581290Z",
+  "version": 1,
+  "workers": {
+    "integrator": {
+      "base": "main",
+      "branch": "team/merge-queue-ce0bff71",
+      "pane_id": "%95",
+      "retired": false,
+      "role": "integrator",
+      "spawned_at": "2026-02-18T02:37:43.302216Z",
+      "ticket_id": "",
+      "window": "integrator",
+      "worker_id": "integrator",
+      "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue",
+      "worktree_key": "merge-queue",
+      "worktree_retirable": false,
+      "worktree_retirable_at": ""
+    },
+    "w1": {
+      "base": "main",
+      "branch": "team/ah-174b",
+      "created_at": "2026-02-18T01:53:16.067500Z",
+      "pane_id": "%93",
+      "retired": true,
+      "retired_at": "2026-02-18T02:10:55.065342Z",
+      "revived_at": "",
+      "role": "investigator",
+      "ticket_id": "ah-174b",
+      "window": "w1-ah-174b",
+      "worker_id": "w1",
+      "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-174b",
+      "worktree_key": "ah-174b",
+      "worktree_retirable": false,
+      "worktree_retirable_at": ""
+    },
+    "w2": {
+      "base": "main",
+      "branch": "team/ah-2fa8",
+      "created_at": "2026-02-18T02:11:17.182876Z",
+      "pane_id": "%94",
+      "retired": true,
+      "retired_at": "2026-02-18T03:54:05.604819Z",
+      "revived_at": "",
+      "role": "worker",
+      "ticket_id": "ah-2fa8",
+      "window": "w2-ah-2fa8",
+      "worker_id": "w2",
+      "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-2fa8",
+      "worktree_key": "ah-2fa8",
+      "worktree_retirable": false,
+      "worktree_retirable_at": ""
+    }
+  }
+}

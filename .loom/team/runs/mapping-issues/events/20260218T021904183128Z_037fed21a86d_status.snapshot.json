@@ -1,0 +1,38 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 57794,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "inbox_unacked_to_manager": 0,
+    "inbox_unacked_total": 1,
+    "merge_claimed": 0,
+    "merge_pending": 0,
+    "merge_queued": 0,
+    "warnings": 0,
+    "workers_alive": 1,
+    "workers_total": 2
+  },
+  "error": {},
+  "id": "037fed21a86d",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {},
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Status snapshot workers=2 inbox_unacked_mgr=0 merge_pending=0",
+  "ts": "2026-02-18T02:19:04.183128Z",
+  "type": "status.snapshot",
+  "v": 1
+}

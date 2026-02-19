@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Team Mapping-issues: Loom sprint plan for frontend map bug fix                                                                                              41,829  20% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  b3dc316a40                                                                                                                                                                          
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+     ▣  Loom-Team-Manager · glm-5                                                                                                                                                        
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: objective: the localhost viewing via make dev-frontend is showing the legend, but no map whatsoever. the app is not complete unt... | if done: loom team disband mapping-     
+  ┃  issues | update: loom team objective mapping-issues append ...                                                                                                                      
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: objective: the localhost viewing via make dev-frontend is showing the legend, but no map whatsoever. the app is not complete unt... | if done: loom team disband mapping-     
+  ┃  issues | update: loom team objective mapping-issues append ...                                                                                                                      
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM inbox id=7f1bffcd162a idle_screen | [Sprint: map display fix] IDLE_SCREEN worker=w2 role=worker unchanged_s=2070 ticket=ah-2fa8 pane=%94 (run ce0bff71)                        
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM inbox id=6aa792318abe sidecar_exited | [Sprint: map display fix] opencode exited for w2 (rc=-9); respawning in 1s. Pane=%94 (run ce0bff71)                                     
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: inbox has 2 unacked. Run: loom team inbox mapping-issues list --to manager --unacked (newest id=6aa792318abe: [Sprint: map display fix] opencode exited for w2 (rc=-9);       
+  ┃  respawning in 1s. Pane=%94)                                                                                                                                                         
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Manager  GLM-5 Z.AI Coding Plan                                                                                                                                           
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ⬝⬝⬝⬝⬝⬝⬝⬝  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         

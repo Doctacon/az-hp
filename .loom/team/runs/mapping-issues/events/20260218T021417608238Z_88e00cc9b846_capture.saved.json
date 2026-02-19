@@ -1,0 +1,41 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 41256,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "bytes": 9951,
+    "lines": 200,
+    "no_join": false
+  },
+  "error": {},
+  "id": "88e00cc9b846",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "capture_file": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/captures/20260218T021417600997Z_f09bd1290f6e_w2.txt",
+    "capture_id": "f09bd1290f6e",
+    "capture_meta": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/captures/20260218T021417600997Z_f09bd1290f6e_w2.json",
+    "pane_id": "%94",
+    "role": "worker",
+    "ticket_id": "ah-2fa8",
+    "worker_id": "w2"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Captured w2 lines=200",
+  "ts": "2026-02-18T02:14:17.608238Z",
+  "type": "capture.saved",
+  "v": 1
+}

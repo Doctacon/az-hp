@@ -1,0 +1,53 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-2fa8",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%94",
+    "pid": 30628,
+    "role": "worker",
+    "ticket_id": "ah-2fa8",
+    "worker_id": "w2"
+  },
+  "data": {
+    "bytes": 100,
+    "from": "team",
+    "meta": {
+      "pane_id": "%94",
+      "recipient": "manager",
+      "role": "worker",
+      "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+      "sprint": {
+        "name": "map display fix",
+        "rev": 1,
+        "slug": "map-display-fix",
+        "started_at": "2026-02-18T01:53:14.621599Z",
+        "tag": "sprint:map-display-fix"
+      },
+      "target": "manager",
+      "ticket_id": "ah-2fa8",
+      "unchanged_s": 2070,
+      "worker_id": "w2"
+    }
+  },
+  "error": {},
+  "id": "d00843a211b0",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "7f1bffcd162a",
+    "kind": "idle_screen",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Inbox wrote kind=idle_screen to=manager id=7f1bffcd162a",
+  "ts": "2026-02-18T03:53:36.163554Z",
+  "type": "inbox.wrote",
+  "v": 1
+}

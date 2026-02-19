@@ -1,0 +1,41 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%95",
+    "pid": 22644,
+    "role": "integrator",
+    "ticket_id": "",
+    "worker_id": "integrator"
+  },
+  "data": {
+    "agent": "loom-team-integrator",
+    "cooldown_s": 300.0,
+    "harness": "opencode",
+    "model": "",
+    "project_dir": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue",
+    "respawn_cap": 3,
+    "respawn_window_s": 3600.0,
+    "stall_s": 1080.0
+  },
+  "error": {},
+  "id": "b3f1e9f67eef",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%95",
+    "recipient": "integrator"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Sidecar started recipient=integrator",
+  "ts": "2026-02-18T02:37:43.964937Z",
+  "type": "sidecar.started",
+  "v": 1
+}

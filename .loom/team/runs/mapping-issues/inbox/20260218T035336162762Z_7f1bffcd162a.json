@@ -1,0 +1,26 @@
+{
+  "acked_at": "",
+  "created_at": "2026-02-18T03:53:36.162762Z",
+  "from": "team",
+  "id": "7f1bffcd162a",
+  "kind": "idle_screen",
+  "message": "[Sprint: map display fix] IDLE_SCREEN worker=w2 role=worker unchanged_s=2070 ticket=ah-2fa8 pane=%94",
+  "meta": {
+    "pane_id": "%94",
+    "recipient": "manager",
+    "role": "worker",
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "sprint": {
+      "name": "map display fix",
+      "rev": 1,
+      "slug": "map-display-fix",
+      "started_at": "2026-02-18T01:53:14.621599Z",
+      "tag": "sprint:map-display-fix"
+    },
+    "target": "manager",
+    "ticket_id": "ah-2fa8",
+    "unchanged_s": 2070,
+    "worker_id": "w2"
+  },
+  "to": "manager"
+}

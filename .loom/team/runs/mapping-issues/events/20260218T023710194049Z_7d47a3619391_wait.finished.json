@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 16507,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "channel": "team:ce0bff71a2e5:to:manager",
+    "elapsed_s": 68.589,
+    "seconds": 300,
+    "signaled": true,
+    "wake_reason": "signal"
+  },
+  "error": {},
+  "id": "7d47a3619391",
+  "ok": true,
+  "op": {
+    "op_id": "ee6d6acec2b3",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "recipient": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Wait finished recipient=manager reason=signal",
+  "ts": "2026-02-18T02:37:10.194049Z",
+  "type": "wait.finished",
+  "v": 1
+}

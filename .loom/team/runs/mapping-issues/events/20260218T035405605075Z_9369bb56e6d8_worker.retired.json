@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-2fa8",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%94",
+    "pid": 46878,
+    "role": "worker",
+    "ticket_id": "ah-2fa8",
+    "worker_id": "w2"
+  },
+  "data": {
+    "worktree_preserved": true
+  },
+  "error": {},
+  "id": "9369bb56e6d8",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%94",
+    "ticket_id": "ah-2fa8",
+    "window": "w2-ah-2fa8",
+    "worker_id": "w2",
+    "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-2fa8"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Retired worker w2",
+  "ts": "2026-02-18T03:54:05.605075Z",
+  "type": "worker.retired",
+  "v": 1
+}

@@ -1,0 +1,40 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%95",
+    "pid": 22644,
+    "role": "integrator",
+    "ticket_id": "",
+    "worker_id": "integrator"
+  },
+  "data": {
+    "bytes": 9943,
+    "lines": 200,
+    "no_join": false
+  },
+  "error": {},
+  "id": "368faf4a9fb5",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "capture_file": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/captures/20260218T031901544334Z_a3426ace0185_integrator.txt",
+    "capture_id": "a3426ace0185",
+    "capture_meta": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/captures/20260218T031901544334Z_a3426ace0185_integrator.json",
+    "pane_id": "%95",
+    "role": "integrator",
+    "worker_id": "integrator"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Auto-captured integrator lines=200",
+  "ts": "2026-02-18T03:19:01.555449Z",
+  "type": "capture.saved",
+  "v": 1
+}

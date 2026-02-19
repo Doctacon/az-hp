@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Sprint prep: map display fix investigation                                                                                                                  37,031  18% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  - **Partial data**: Some layers may be empty if downloads fail - document which layers failed                                                                                       
+  ┃                                                                                                                                                                                      
+  ┃  ## Dependencies                                                                                                                                                                     
+  ┃  - None (this is the first step)                                                                                                                                                     
+  ┃                                                                                                                                                                                      
+  ┃  ## Ordering                                                                                                                                                                         
+  ┃  - Must be completed before: verify-map-renders                                                                                                                                      
+  ┃  - Blocks: fix-arcgis-json-format (needs data to verify fix)                                                                                                                         
+  ┃  EOF                                                                                                                                                                                 
+  ┃  )"                                                                                                                                                                                  
+  ┃                                                                                                                                                                                      
+  ┃  Error: unrecognized arguments: --body                                                                                                                                               
+  ┃  Hint: Run `loom ticket -h` or `loom ticket <command> -h`.                                                                                                                           
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  Thinking: Let me check the loom ticket create syntax.                                                                                                                               
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Check ticket create syntax                                                                                                                                                        
+  ┃                                                                                                                                                                                      
+  ┃  $ loom ticket create -h                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+  ┃  usage: agent-loom-ticket create [-h] [--json] [--tickets-dir TICKETS_DIR]                                                                                                           
+  ┃                                  [--no-audit] [--audit-writes-only]                                                                                                                  
+  ┃                                  [--title TITLE] [-d DESCRIPTION]                                                                                                                    
+  ┃                                  [--design DESIGN] [--acceptance ACCEPTANCE]                                                                                                         
+  ┃                                  [-t TYPE] [-p PRIORITY] [-a ASSIGNEE]                                                                                                               
+  ┃                                  [--external-ref EXTERNAL_REF]                                                                                                                       
+  ┃                                  [--parent PARENT] [--tags TAGS]                                                                                                                     
+  ┃                                  [--no-sprint-tag]                                                                                                                                   
+  ┃                                  [title]                                                                                                                                             
+  ┃                                                                                                                                                                                      
+  ┃  …                                                                                                                                                                                   
+  ┃                                                                                                                                                                                      
+  ┃  Click to expand                                                                                                                                                                     
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+     ▣  Loom-Team-Investigator · glm-5                                                                                                                                                   
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Investigator  GLM-5 Z.AI Coding Plan                                                                                                                                      
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ⬝⬝■■■■■■  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         

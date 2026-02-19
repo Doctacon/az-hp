@@ -1,0 +1,32 @@
+{
+  "bytes": 9943,
+  "captured_at": "2026-02-18T03:43:01.868006Z",
+  "id": "302c9afd1a54",
+  "lines": 200,
+  "output_file": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/captures/20260218T034301868006Z_302c9afd1a54_integrator.txt",
+  "pane": {
+    "active": "1",
+    "cmd_raw": "%95 python3.13",
+    "current_command": "python3.13",
+    "dead": "0",
+    "last_activity": "",
+    "pane_id": "%95",
+    "path": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue",
+    "pid": "22644",
+    "session_name": "team-mapping-issues",
+    "start_command": "loom team tui /Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue --harness opencode --agent loom-team-integrator --prompt \"You are Team Integrator.\\n\\nTEAM: mapping-issues\\nRUN_ID: ce0bff71a2e54c3abc0386e5fb5e7b10\\nWORKER_ID: integrator\\nROLE: integrator\\nWORKTREE: /Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue\\nBRANCH: team/merge-queue-ce0bff71\\nBASE: main\\nCHARTER: /Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/CHARTER.md\\nTICKET_DIR: /Users/crlough/Code/personal/az-hp/.loom/ticket\\nSPRINT: map display fix\\nSPRINT_TAG: sprint:map-display-fix\\nMERGE_TARGET: origin/main  push=True\\n\\nHARD CONSTRAINTS:\\n- Do NOT run tmux directly.\\n- Do not implement features; ship only manager-approved branches.\\n- You do NOT merge into the target branch. You only merge into the merge-queue branch shown above.\\n- If your merge worktree is wedged, ask the manager to run: `loom team spawn-integrator <TEAM> --force`.\\n- Use `loom team merge` commands for deterministic queue operations.\\n\\nQueue ops:\\n- Claim next: `loom team merge mapping-issues next --claim-by integrator`\\n- Mark done: `loom team merge mapping-issues done <ITEM_ID> --result merged|blocked --note \\\"...\\\"`\\n- Manager ships merge-queue -> target with: `loom team ship mapping-issues`\\n\\nIdling: If no work, run `loom team wait 10m` and stop output.\"",
+    "start_path": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue",
+    "synchronized": "0",
+    "title": "OC | Team Integrator: mapping-issues merge...",
+    "title_raw": "%95 OC | Team Integrator: mapping-issues merge...",
+    "window_id": "@91",
+    "window_name": "integrator"
+  },
+  "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+  "target": {
+    "pane_id": "%95",
+    "role": "integrator",
+    "worker_id": "integrator"
+  },
+  "team": "mapping-issues"
+}

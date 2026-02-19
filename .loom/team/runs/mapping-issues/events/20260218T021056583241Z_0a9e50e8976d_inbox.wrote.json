@@ -1,0 +1,51 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-174b",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%93",
+    "pid": 67702,
+    "role": "investigator",
+    "ticket_id": "ah-174b",
+    "worker_id": "w1"
+  },
+  "data": {
+    "bytes": 84,
+    "from": "team",
+    "meta": {
+      "backoff_s": 1.0,
+      "pane_id": "%93",
+      "rc": -9,
+      "recipient": "w1",
+      "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+      "sprint": {
+        "name": "map display fix",
+        "rev": 1,
+        "slug": "map-display-fix",
+        "started_at": "2026-02-18T01:53:14.621599Z",
+        "tag": "sprint:map-display-fix"
+      },
+      "target": "manager"
+    }
+  },
+  "error": {},
+  "id": "0a9e50e8976d",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "db3f74cfb7b8",
+    "kind": "sidecar",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Inbox wrote kind=sidecar to=manager id=db3f74cfb7b8",
+  "ts": "2026-02-18T02:10:56.583241Z",
+  "type": "inbox.wrote",
+  "v": 1
+}

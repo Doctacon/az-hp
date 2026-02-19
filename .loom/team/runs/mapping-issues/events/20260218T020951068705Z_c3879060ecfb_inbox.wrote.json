@@ -1,0 +1,49 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-174b",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%93",
+    "pid": 25523,
+    "role": "investigator",
+    "ticket_id": "ah-174b",
+    "worker_id": "w1"
+  },
+  "data": {
+    "bytes": 261,
+    "from": "team",
+    "meta": {
+      "recipient": "manager",
+      "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+      "sprint": {
+        "name": "map display fix",
+        "rev": 1,
+        "slug": "map-display-fix",
+        "started_at": "2026-02-18T01:53:14.621599Z",
+        "tag": "sprint:map-display-fix"
+      },
+      "target": "manager",
+      "team": "mapping-issues"
+    }
+  },
+  "error": {},
+  "id": "c3879060ecfb",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "67c414f5c4b2",
+    "kind": "send",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Inbox wrote kind=send to=manager id=67c414f5c4b2",
+  "ts": "2026-02-18T02:09:51.068705Z",
+  "type": "inbox.wrote",
+  "v": 1
+}

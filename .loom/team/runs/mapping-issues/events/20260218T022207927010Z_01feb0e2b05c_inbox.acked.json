@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-2fa8",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%94",
+    "pid": 68419,
+    "role": "worker",
+    "ticket_id": "ah-2fa8",
+    "worker_id": "w2"
+  },
+  "data": {
+    "acked_at": "2026-02-18T02:22:07.925669Z",
+    "created_at": "2026-02-18T02:12:04.498054Z",
+    "from": "team",
+    "kind": "send"
+  },
+  "error": {},
+  "id": "01feb0e2b05c",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "bfbb0ed129af",
+    "to": "w2"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Inbox acked id=bfbb0ed129af",
+  "ts": "2026-02-18T02:22:07.927010Z",
+  "type": "inbox.acked",
+  "v": 1
+}

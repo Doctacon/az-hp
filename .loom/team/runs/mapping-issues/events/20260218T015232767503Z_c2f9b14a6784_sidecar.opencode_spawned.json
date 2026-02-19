@@ -1,0 +1,35 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 64737,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "backoff_s": 1.0,
+    "pid": 64813
+  },
+  "error": {},
+  "id": "c2f9b14a6784",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%92",
+    "recipient": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "opencode spawned recipient=manager pid=64813",
+  "ts": "2026-02-18T01:52:32.767503Z",
+  "type": "sidecar.opencode_spawned",
+  "v": 1
+}

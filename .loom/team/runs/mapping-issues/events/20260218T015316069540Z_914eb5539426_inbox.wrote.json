@@ -1,0 +1,49 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 67501,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "bytes": 122,
+    "from": "team",
+    "meta": {
+      "recipient": "manager",
+      "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+      "sprint": {
+        "name": "map display fix",
+        "rev": 1,
+        "slug": "map-display-fix",
+        "started_at": "2026-02-18T01:53:14.621599Z",
+        "tag": "sprint:map-display-fix",
+        "updated_at": "2026-02-18T01:53:14.621727Z"
+      },
+      "target": "manager"
+    }
+  },
+  "error": {},
+  "id": "914eb5539426",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "adbeae0efbfd",
+    "kind": "sprint",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Inbox wrote kind=sprint to=manager id=adbeae0efbfd",
+  "ts": "2026-02-18T01:53:16.069540Z",
+  "type": "inbox.wrote",
+  "v": 1
+}

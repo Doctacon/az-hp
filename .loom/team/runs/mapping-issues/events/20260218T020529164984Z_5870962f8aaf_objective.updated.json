@@ -1,0 +1,36 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 10369,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "mode": "append",
+    "nudge_reason": "",
+    "nudged": true
+  },
+  "error": {},
+  "id": "5870962f8aaf",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "e9fb401cace0",
+    "objective_rev": 2
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Objective append rev=2 nudged=True",
+  "ts": "2026-02-18T02:05:29.164984Z",
+  "type": "objective.updated",
+  "v": 1
+}

@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 29244,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "worktree_preserved": true
+  },
+  "error": {},
+  "id": "4a95a10a1711",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%93",
+    "ticket_id": "ah-174b",
+    "window": "w1-ah-174b",
+    "worker_id": "w1",
+    "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-174b"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Retired worker w1",
+  "ts": "2026-02-18T02:10:55.065845Z",
+  "type": "worker.retired",
+  "v": 1
+}

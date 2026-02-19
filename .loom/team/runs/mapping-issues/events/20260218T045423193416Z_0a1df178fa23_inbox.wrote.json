@@ -1,0 +1,51 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/merge-queue",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%95",
+    "pid": 22644,
+    "role": "integrator",
+    "ticket_id": "",
+    "worker_id": "integrator"
+  },
+  "data": {
+    "bytes": 92,
+    "from": "team",
+    "meta": {
+      "backoff_s": 1.0,
+      "pane_id": "%95",
+      "rc": -9,
+      "recipient": "integrator",
+      "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+      "sprint": {
+        "name": "map display fix",
+        "rev": 1,
+        "slug": "map-display-fix",
+        "started_at": "2026-02-18T01:53:14.621599Z",
+        "tag": "sprint:map-display-fix"
+      },
+      "target": "manager"
+    }
+  },
+  "error": {},
+  "id": "0a1df178fa23",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "4f023b6bba46",
+    "kind": "sidecar",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Inbox wrote kind=sidecar to=manager id=4f023b6bba46",
+  "ts": "2026-02-18T04:54:23.193416Z",
+  "type": "inbox.wrote",
+  "v": 1
+}

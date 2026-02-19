@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 23559,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "note": "",
+    "nudged": true
+  },
+  "error": {},
+  "id": "455a5fac92e4",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "branch": "team/ah-2fa8",
+    "from_worker": "w2",
+    "merge_item_id": "b3dc316a40",
+    "ticket_id": "ah-2fa8"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Merge enqueued item=b3dc316a40 ticket=ah-2fa8",
+  "ts": "2026-02-18T02:37:55.321910Z",
+  "type": "merge.enqueued",
+  "v": 1
+}

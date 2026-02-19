@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Team Mapping-issues: Loom sprint plan for frontend map bug fix                                                                                              41,829  20% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  Let me check if integrator exists and then proceed.                                                                                                                                 
+                                                                                                                                                                                         
+     Pipeline ticket complete! All 7 data files generated. Let me approve and close it, then enqueue for merge.                                                                          
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Ensure integrator exists                                                                                                                                                          
+  ┃                                                                                                                                                                                      
+  ┃  $ loom team spawn-integrator mapping-issues                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  integrator                                                                                                                                                                          
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Close pipeline ticket                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+  ┃  $ loom ticket status ah-2fa8 closed                                                                                                                                                 
+  ┃                                                                                                                                                                                      
+  ┃  Updated ah-2fa8 -> closed                                                                                                                                                           
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  Thinking: Now I need to enqueue the completed work for merge. The ticket ah-2fa8 is done on branch team/ah-2fa8.                                                                    
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Enqueue pipeline work for merge                                                                                                                                                   
+  ┃                                                                                                                                                                                      
+  ┃  $ loom team merge mapping-issues enqueue --ticket ah-2fa8 --branch team/ah-2fa8 --from-worker w2                                                                                    
+  ┃                                                                                                                                                                                      
+  ┃  b3dc316a40                                                                                                                                                                          
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+     ▣  Loom-Team-Manager · glm-5                                                                                                                                                        
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  TEAM: objective: the localhost viewing via make dev-frontend is showing the legend, but no map whatsoever. the app is not complete unt... | if done: loom team disband mapping-     
+  ┃  issues | update: loom team objective mapping-issues append ...                                                                                                                      
+  ┃   QUEUED                                                                                                                                                                             
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Manager  GLM-5 Z.AI Coding Plan                                                                                                                                           
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ⬝⬝⬝■■■■■  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         

@@ -1,0 +1,42 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 67501,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "base_ref": "main",
+    "branch_override": "",
+    "resumed": false,
+    "role": "investigator",
+    "worktree_key": "ah-174b"
+  },
+  "error": {},
+  "id": "21786cf785ec",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "branch": "team/ah-174b",
+    "pane_id": "%93",
+    "ticket_id": "ah-174b",
+    "window": "w1-ah-174b",
+    "worker_id": "w1",
+    "worktree": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/worktrees/ah-174b"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Spawned w1 role=investigator ticket=ah-174b",
+  "ts": "2026-02-18T01:53:16.067604Z",
+  "type": "worker.spawned",
+  "v": 1
+}

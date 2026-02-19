@@ -1,0 +1,34 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 8698,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "seconds": 300,
+    "use_tmux": true
+  },
+  "error": {},
+  "id": "a344b4efd877",
+  "ok": true,
+  "op": {
+    "op_id": "56124a25c86b",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "recipient": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Wait started recipient=manager seconds=300",
+  "ts": "2026-02-18T02:33:45.564553Z",
+  "type": "wait.started",
+  "v": 1
+}

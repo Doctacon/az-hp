@@ -1,0 +1,22 @@
+{
+  "acked_at": "2026-02-18T02:22:07.925669Z",
+  "created_at": "2026-02-18T02:12:04.498054Z",
+  "from": "team",
+  "id": "bfbb0ed129af",
+  "kind": "send",
+  "message": "[Sprint: map display fix] Start running the data pipeline. This is the critical path - all other tickets depend on this completing. Run 'make all' and monitor for any failures. Document which layers download successfully vs fail. Update the ticket as you progress. Let me know immediately if you hit a blocking issue.",
+  "meta": {
+    "recipient": "w2",
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "sprint": {
+      "name": "map display fix",
+      "rev": 1,
+      "slug": "map-display-fix",
+      "started_at": "2026-02-18T01:53:14.621599Z",
+      "tag": "sprint:map-display-fix"
+    },
+    "target": "w2",
+    "team": "mapping-issues"
+  },
+  "to": "w2"
+}

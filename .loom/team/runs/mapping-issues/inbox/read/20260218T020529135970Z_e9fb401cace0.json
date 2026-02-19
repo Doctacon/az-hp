@@ -1,0 +1,23 @@
+{
+  "acked_at": "2026-02-18T02:05:53.442606Z",
+  "created_at": "2026-02-18T02:05:29.135970Z",
+  "from": "team",
+  "id": "e9fb401cace0",
+  "kind": "objective",
+  "message": "[Sprint: map display fix] Objective appended (rev=2) at 2026-02-18T02:05:29.135326Z.\n\nTeam: mapping-issues\nCharter: /Users/crlough/Code/personal/az-hp/.loom/team/runs/mapping-issues/CHARTER.md\n\nNext actions (manager):\n- Re-read CHARTER and pivot immediately.\n- Map objective -> tickets (loom ticket).\n- If no crisp tickets exist: spawn an Investigator to produce a ticket set.\n- When 100% done (tickets closed + merges shipped): disband the team.\n\nCurrent objective:\nthe localhost viewing via make dev-frontend is showing the legend, but no map whatsoever. the app is not complete until i can view the ultimate product\n\n---\n\n## Update 2026-02-18T02:05:29.135326Z\n\nAdditionally: investigate why the data pipeline takes over 15 minutes. Identify bottlenecks and potential optimizations.\n",
+  "meta": {
+    "mode": "append",
+    "objective_rev": 2,
+    "recipient": "manager",
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "sprint": {
+      "name": "map display fix",
+      "rev": 1,
+      "slug": "map-display-fix",
+      "started_at": "2026-02-18T01:53:14.621599Z",
+      "tag": "sprint:map-display-fix"
+    },
+    "target": "manager"
+  },
+  "to": "manager"
+}

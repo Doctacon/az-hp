@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%92",
+    "pid": 21438,
+    "role": "manager",
+    "ticket_id": "",
+    "worker_id": ""
+  },
+  "data": {
+    "acked_at": "2026-02-18T02:37:24.864205Z",
+    "created_at": "2026-02-18T02:37:10.186102Z",
+    "from": "team",
+    "kind": "send"
+  },
+  "error": {},
+  "id": "8252ba8ce72b",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "01e9953ecf3f",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "ce0bff71a2e54c3abc0386e5fb5e7b10",
+    "session": "team-mapping-issues",
+    "team": "mapping-issues"
+  },
+  "summary": "Inbox acked id=01e9953ecf3f",
+  "ts": "2026-02-18T02:37:24.865511Z",
+  "type": "inbox.acked",
+  "v": 1
+}

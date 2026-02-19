@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Sprint prep: map display fix investigation                                                                                                                  28,545  14% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Show BLM SMA missing data ticket                                                                                                                                                  
+  ┃                                                                                                                                                                                      
+  ┃  $ loom ticket show ah-ad64                                                                                                                                                          
+  ┃                                                                                                                                                                                      
+  ┃  # ah-ad64 - Fix BLM SMA missing BLM and State Trust land                                                                                                                            
+  ┃                                                                                                                                                                                      
+  ┃  - status: `open`                                                                                                                                                                    
+  ┃  - priority: `P2`                                                                                                                                                                    
+  ┃  - type: `bug`                                                                                                                                                                       
+  ┃  - assignee: `Connor`                                                                                                                                                                
+  ┃  - tags: `sprint:fix-make-all`                                                                                                                                                       
+  ┃  - parent: `ah-1494`                                                                                                                                                                 
+  ┃                                                                                                                                                                                      
+  ┃  ## Relationships                                                                                                                                                                    
+  ┃  …                                                                                                                                                                                   
+  ┃                                                                                                                                                                                      
+  ┃  Click to expand                                                                                                                                                                     
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  Thinking: Now I have a clearer picture. The issue is that:                                                                                                                          
+  ┃  1. The frontend is configured correctly but there are no data files in frontend/public/data/                                                                                        
+  ┃  2. There are existing tickets about land ownership issues (ah-58db, ah-a536, ah-ad64)                                                                                               
+  ┃                                                                                                                                                                                      
+  ┃  Let me also check the pipeline scripts to understand what data needs to be generated and copied to the frontend.                                                                    
+                                                                                                                                                                                         
+     → Read pipeline/01_download.py                                                                                                                                                      
+     → Read pipeline/02_clip_arizona.py                                                                                                                                                  
+     → Read pipeline/03_enrich.py                                                                                                                                                        
+     ✱ Glob "pipeline/04_*.sh" (1 match)                                                                                                                                                 
+                                                                                                                                                                                         
+  ┃  Thinking: Now I need to look at the tile generation script and the utils to understand the full data flow.                                                                          
+                                                                                                                                                                                         
+     → Read pipeline/04_generate_tiles.sh                                                                                                                                                
+     → Read pipeline/utils.py                                                                                                                                                            
+     → Read frontend/src/App.css                                                                                                                                                         
+                                                                                                                                                                                         
+     ▣  Loom-Team-Investigator · glm-5                                                                                                                                                   
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Investigator  GLM-5 Z.AI Coding Plan                                                                                                                                      
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ⬝⬝⬝⬝⬝⬝⬝⬝  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         

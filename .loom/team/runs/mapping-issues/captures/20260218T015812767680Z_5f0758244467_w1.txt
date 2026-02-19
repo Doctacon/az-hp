@@ -1,0 +1,51 @@
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃  # Sprint prep: map display fix investigation                                                                                                                  35,727  17% ($0.00)   
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+  ┃  2. **ArcGIS JSON format** - BLM SMA may export in ArcGIS format (per ah-58db)                                                                                                       
+  ┃     - Resolution: Include format fix as part of the enrichment step                                                                                                                  
+  ┃                                                                                                                                                                                      
+  ┃  3. **Large data files** - Overture data may be too large to process                                                                                                                 
+  ┃     - Resolution: The code already has `LARGE_LAYER_THRESHOLD` handling (100MB skip)                                                                                                 
+  ┃                                                                                                                                                                                      
+  ┃  4. **Browser console errors** - May reveal additional issues after pipeline runs                                                                                                    
+  ┃     - Resolution: Test with `make dev-frontend` and check console                                                                                                                    
+  ┃                                                                                                                                                                                      
+  ┃  ## Ticket Set                                                                                                                                                                       
+  ┃                                                                                                                                                                                      
+  ┃  Create the sprint tickets directly. This sprint prep ticket should be the parent.                                                                                                   
+  ┃  - Tag rule: include `sprint:map-display-fix` on sprint tickets.                                                                                                                     
+  ┃  - Prefer: `loom ticket create ... --parent <THIS_TICKET_ID> --acceptance "..."`                                                                                                     
+  ┃                                                                                                                                                                                      
+  ┃  Ticket quality rubric (non-negotiable):                                                                                                                                             
+  ┃  - Scope + explicit non-goals                                                                                                                                                        
+  ┃  - Step-by-step implementation plan (include file paths when possible)                                                                                                               
+  ┃  - Acceptance criteria (observable outcomes)                                                                                                                                         
+  ┃  - Verification commands (use `uv run ...` for Python)                                                                                                                               
+  ┃  - Risks/edge cases                                                                                                                                                                  
+  ┃  - Dependencies + suggested ordering (use `loom ticket dep-add`)                                                                                                                     
+  ┃                                                                                                                                                                                      
+  ┃  ## Output                                                                                                                                                                           
+  ┃                                                                                                                                                                                      
+  ┃  When done, update THIS ticket with:                                                                                                                                                 
+  ┃  - Created/updated ticket IDs: [ ... ]                                                                                                                                               
+  ┃  - Suggested ordering + what can run in parallel                                                                                                                                     
+  ┃                                                                                                                                                                                      
+  ┃  Sprint name: map display fix                                                                                                                                                        
+  ┃  Sprint tag: sprint:map-display-fix                                                                                                                                                  
+  ┃  EOF                                                                                                                                                                                 
+  ┃  )"                                                                                                                                                                                  
+  ┃                                                                                                                                                                                      
+  ┃  Updated ah-174b                                                                                                                                                                     
+  ┃                                                                                                                                                                                      
+                                                                                                                                                                                         
+     ▣  Loom-Team-Investigator · glm-5                                                                                                                                                   
+                                                                                                                                                                                         
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃                                                                                                                                                                                      
+  ┃  Loom-Team-Investigator  GLM-5 Z.AI Coding Plan                                                                                                                                      
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+   ⬝⬝⬝⬝⬝⬝⬝⬝  esc interrupt                                                                                                                                  tab agents  ctrl+p commands  
+                                                                                                                                                                                         
