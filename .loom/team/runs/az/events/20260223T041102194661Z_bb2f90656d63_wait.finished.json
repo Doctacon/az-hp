@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%101",
+    "pid": 29734,
+    "role": "architect",
+    "ticket_id": "",
+    "worker_id": "architect"
+  },
+  "data": {
+    "channel": "team:af3d2620d66a:to:architect",
+    "elapsed_s": 900.01,
+    "seconds": 900,
+    "signaled": false,
+    "wake_reason": "timeout"
+  },
+  "error": {},
+  "id": "bb2f90656d63",
+  "ok": true,
+  "op": {
+    "op_id": "5c71ff9ae55c",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "recipient": "architect"
+  },
+  "run": {
+    "run_id": "af3d2620d66a4f118c262827e6d8a2c7",
+    "session": "team-az",
+    "team": "az"
+  },
+  "summary": "Wait finished recipient=architect reason=timeout",
+  "ts": "2026-02-23T04:11:02.194661Z",
+  "type": "wait.finished",
+  "v": 1
+}

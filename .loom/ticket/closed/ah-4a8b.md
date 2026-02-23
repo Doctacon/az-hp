@@ -1,6 +1,6 @@
 ---
 "id": "ah-4a8b"
-"status": "review"
+"status": "closed"
 "deps": []
 "links": []
 "created": "2026-02-22T23:46:48Z"

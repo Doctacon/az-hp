@@ -1,0 +1,34 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%101",
+    "pid": 29177,
+    "role": "architect",
+    "ticket_id": "",
+    "worker_id": "architect"
+  },
+  "data": {
+    "rc": -9
+  },
+  "error": {},
+  "id": "196fd6e303d0",
+  "ok": false,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "pane_id": "%101",
+    "recipient": "architect"
+  },
+  "run": {
+    "run_id": "af3d2620d66a4f118c262827e6d8a2c7",
+    "session": "team-az",
+    "team": "az"
+  },
+  "summary": "opencode exited recipient=architect rc=-9",
+  "ts": "2026-02-23T04:07:20.863014Z",
+  "type": "sidecar.opencode_exited",
+  "v": 1
+}

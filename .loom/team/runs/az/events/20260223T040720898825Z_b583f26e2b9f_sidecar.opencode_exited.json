@@ -2,8 +2,8 @@
   "actor": {
     "cwd": "/Users/crlough/Code/personal/az-hp/.loom/team/runs/az/worktrees/merge-queue",
     "host": "Mountain-Quail.local",
-    "pane_id": "%89",
-    "pid": 58323,
+    "pane_id": "%100",
+    "pid": 29165,
     "role": "integrator",
     "ticket_id": "",
     "worker_id": "integrator"
@@ -12,23 +12,23 @@
     "rc": -9
   },
   "error": {},
-  "id": "ec1f83019617",
+  "id": "b583f26e2b9f",
   "ok": false,
   "op": {
     "op_id": "",
     "parent_op_id": ""
   },
   "refs": {
-    "pane_id": "%89",
+    "pane_id": "%100",
     "recipient": "integrator"
   },
   "run": {
-    "run_id": "0ddfe344209a41a2b71b8577ce21f014",
+    "run_id": "af3d2620d66a4f118c262827e6d8a2c7",
     "session": "team-az",
     "team": "az"
   },
   "summary": "opencode exited recipient=integrator rc=-9",
-  "ts": "2026-02-17T21:50:51.985908Z",
+  "ts": "2026-02-23T04:07:20.898825Z",
   "type": "sidecar.opencode_exited",
   "v": 1
 }

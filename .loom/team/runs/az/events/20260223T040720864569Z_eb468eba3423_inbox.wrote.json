@@ -1,0 +1,44 @@
+{
+  "actor": {
+    "cwd": "/Users/crlough/Code/personal/az-hp",
+    "host": "Mountain-Quail.local",
+    "pane_id": "%101",
+    "pid": 29177,
+    "role": "architect",
+    "ticket_id": "",
+    "worker_id": "architect"
+  },
+  "data": {
+    "bytes": 66,
+    "from": "team",
+    "meta": {
+      "backoff_s": 1.0,
+      "pane_id": "%101",
+      "rc": -9,
+      "recipient": "architect",
+      "run_id": "af3d2620d66a4f118c262827e6d8a2c7",
+      "target": "manager"
+    }
+  },
+  "error": {},
+  "id": "eb468eba3423",
+  "ok": true,
+  "op": {
+    "op_id": "",
+    "parent_op_id": ""
+  },
+  "refs": {
+    "inbox_id": "a595e044854c",
+    "kind": "sidecar",
+    "to": "manager"
+  },
+  "run": {
+    "run_id": "",
+    "session": "",
+    "team": "az"
+  },
+  "summary": "Inbox wrote kind=sidecar to=manager id=a595e044854c",
+  "ts": "2026-02-23T04:07:20.864569Z",
+  "type": "inbox.wrote",
+  "v": 1
+}

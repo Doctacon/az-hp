@@ -1,0 +1,44 @@
+{
+  "packs": [
+    {
+      "files": [
+        {
+          "path": ".claude/agents/loom-team-architect.md",
+          "sha256": "899ddb3d135cf3ef02f8fea37eb081193f3a30e96a518ac3557db66f48eff48e"
+        },
+        {
+          "path": ".claude/agents/loom-team-integrator.md",
+          "sha256": "61439d8e9cdbaaee174586fe87b180308fd1483e4e6fb0a6f0fc543d7cafa8a9"
+        },
+        {
+          "path": ".claude/agents/loom-team-manager.md",
+          "sha256": "c83490162f5769ede39e5ce154a94ca6d4443a442d9eebfe079aa456b64005ab"
+        },
+        {
+          "path": ".claude/agents/loom-team-worker.md",
+          "sha256": "9986678c38498c0bd3031ab06490bc803e2e808d5b4a3ea58ff5bf56b76f25cd"
+        },
+        {
+          "path": ".opencode/agents/loom-team-architect.md",
+          "sha256": "385fb3c359830d39369808d4ac155ea4a0e1a8abfb392f4e42549d5ae14e6881"
+        },
+        {
+          "path": ".opencode/agents/loom-team-integrator.md",
+          "sha256": "117230b87c34c0d6899724e29c116e998cc9449826c74aad084a52616bfc72fd"
+        },
+        {
+          "path": ".opencode/agents/loom-team-manager.md",
+          "sha256": "5ac0b10c83e2277b40d6724666df59005716860394dd5a6d8939aad57a28c39a"
+        },
+        {
+          "path": ".opencode/agents/loom-team-worker.md",
+          "sha256": "bc575a1f793d32f917d913dbe995a5837984aaeadbb8765e3fa303ee34fedbbd"
+        }
+      ],
+      "id": "loom-team-core",
+      "installed_at": "2026-02-23T03:30:39.193658Z",
+      "version": "0.1.0"
+    }
+  ],
+  "version": 1
+}
