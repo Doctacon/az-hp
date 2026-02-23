@@ -115,13 +115,13 @@ def download_blm_sma():
     
     xmin, ymin, xmax, ymax = AZ_BBOX['xmin'], AZ_BBOX['ymin'], AZ_BBOX['xmax'], AZ_BBOX['ymax']
     
+    # 2x2 tiled bboxes for BLM and STATE layers (full AZ bbox causes 500 errors)
     tiled_bboxes_2x2 = [
         f"{xmin},{ymin},{(xmin+xmax)/2},{(ymin+ymax)/2}",
         f"{(xmin+xmax)/2},{ymin},{xmax},{(ymin+ymax)/2}",
         f"{xmin},{(ymin+ymax)/2},{(xmin+xmax)/2},{ymax}",
         f"{(xmin+xmax)/2},{(ymin+ymax)/2},{xmax},{ymax}",
     ]
-    
     full_bbox = f"{xmin},{ymin},{xmax},{ymax}"
 
     def convert_arcgis_to_geojson(arcgis_geom):
