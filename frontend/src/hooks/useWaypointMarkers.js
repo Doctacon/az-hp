@@ -17,7 +17,7 @@ export function useWaypointMarkers(map, isLoaded, waypoints, onWaypointClick, on
       const el = document.createElement('div')
       el.className = 'waypoint-marker'
       el.style.backgroundColor = wp.color
-      el.innerHTML = iconSymbol
+      el.textContent = iconSymbol
       el.addEventListener('click', (e) => {
         e.stopPropagation()
         onWaypointClick(wp)

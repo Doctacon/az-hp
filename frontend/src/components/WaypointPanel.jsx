@@ -62,7 +62,14 @@ export default function WaypointPanel({
           )}
 
           {waypoints.length > 0 && (
-            <button className="clear-all-btn" onClick={onClearAll}>
+            <button 
+              className="clear-all-btn" 
+              onClick={() => {
+                if (window.confirm('Delete all waypoints? This cannot be undone.')) {
+                  onClearAll()
+                }
+              }}
+            >
               Clear All
             </button>
           )}
