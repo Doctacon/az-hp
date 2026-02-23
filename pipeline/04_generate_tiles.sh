@@ -11,6 +11,8 @@ FRONTEND_DATA="$PROJECT_DIR/frontend/public/data"
 mkdir -p "$TILES_DIR"
 mkdir -p "$FRONTEND_DATA"
 
+PIPELINE_START=$(date +%s)
+
 echo "============================================"
 echo "AZ Hunt Planner - Tile Generation"
 echo "============================================"
@@ -20,6 +22,17 @@ cd "$PROJECT_DIR"
 echo "Generating PMTiles with tippecanoe..."
 echo "  (Streaming parquet → tippecanoe via process substitution)"
 echo ""
+
+# Timing function
+time_step() {
+    local name=$1
+    local start=$(date +%s)
+    shift
+    "$@"
+    local end=$(date +%s)
+    local elapsed=$((end - start))
+    echo "  TIMING [$name]: ${elapsed}s"
+}
 
 generate_tiles_parquet() {
     local name=$1
@@ -35,6 +48,7 @@ generate_tiles_parquet() {
         return 1
     fi
     
+    local start=$(date +%s)
     echo "  $name..."
     tippecanoe \
         -o "$output_path" \
@@ -45,6 +59,9 @@ generate_tiles_parquet() {
         --force \
         <(ogr2ogr -f GeoJSONSeq /vsistdout/ "$input_path" 2>/dev/null) \
         2>&1 | grep -E "(features|Warning|Error)" || true
+    local end=$(date +%s)
+    local elapsed=$((end - start))
+    echo "  TIMING [generate_tiles:$name]: ${elapsed}s"
 }
 
 generate_tiles_geojson() {
@@ -61,6 +78,7 @@ generate_tiles_geojson() {
         return 1
     fi
     
+    local start=$(date +%s)
     echo "  $name..."
     tippecanoe \
         -o "$output_path" \
@@ -71,6 +89,9 @@ generate_tiles_geojson() {
         --force \
         "$input_path" \
         2>&1 | grep -E "(features|Warning|Error)" || true
+    local end=$(date +%s)
+    local elapsed=$((end - start))
+    echo "  TIMING [generate_tiles:$name]: ${elapsed}s"
 }
 
 echo "Starting parallel tile generation..."
@@ -95,14 +116,20 @@ wait $PID4 || echo "  land-ownership had issues"
 
 echo ""
 echo "Copying PMTiles to frontend..."
+COPY_START=$(date +%s)
 for f in roads places hunt-units land-ownership; do
     if [ -f "$TILES_DIR/${f}.pmtiles" ]; then
         cp "$TILES_DIR/${f}.pmtiles" "$FRONTEND_DATA/"
         echo "  Copied ${f}.pmtiles"
     fi
 done
+COPY_END=$(date +%s)
+echo "  TIMING [copy to frontend]: $((COPY_END - COPY_START))s"
+
+PIPELINE_END=$(date +%s)
+PIPELINE_ELAPSED=$((PIPELINE_END - PIPELINE_START))
 
 echo ""
 echo "============================================"
-echo "Tile generation complete!"
+echo "Tile generation complete! Total time: ${PIPELINE_ELAPSED}s"
 echo "============================================"

@@ -1,4 +1,6 @@
 from pathlib import Path
+import time
+from functools import wraps
 
 AZ_BBOX = {
     "xmin": -114.82,
@@ -54,3 +56,40 @@ HUNT_POI_CATEGORIES = [
 AZGFD_GMU_URL = "https://hub.arcgis.com/api/download/v1/items/9b4aa5c5f1014363bf3139ed931e205d/geojson?layers=0"
 
 AZ_BOUNDARY_URL = "https://www2.census.gov/geo/tiger/GENZ2022/shp/cb_2022_us_state_500k.zip"
+
+
+# === TIMING UTILITIES ===
+
+class Timer:
+    """Context manager for timing code blocks."""
+    
+    def __init__(self, name: str, print_start: bool = False):
+        self.name = name
+        self.print_start = print_start
+        self.start_time: float | None = None
+        self.elapsed: float | None = None
+    
+    def __enter__(self):
+        self.start_time = time.time()
+        if self.print_start:
+            print(f"  Starting: {self.name}...")
+        return self
+    
+    def __exit__(self, *args):
+        if self.start_time is not None:
+            self.elapsed = time.time() - self.start_time
+            print(f"  TIMING [{self.name}]: {self.elapsed:.1f}s")
+        return False
+
+
+def timed(func):
+    """Decorator to time function execution."""
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        print(f"  Starting {func.__name__}...")
+        result = func(*args, **kwargs)
+        elapsed = time.time() - start
+        print(f"  TIMING [{func.__name__}]: {elapsed:.1f}s")
+        return result
+    return wrapper

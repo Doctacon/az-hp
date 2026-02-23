@@ -1,11 +1,12 @@
 import shutil
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import geopandas as gpd
-from pipeline.utils import RAW_DIR, PROCESSED_DIR
+from pipeline.utils import RAW_DIR, PROCESSED_DIR, Timer
 
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -19,38 +20,40 @@ def load_az_boundary():
 
 
 def clip_layer(input_name: str, output_name: str, az_boundary: gpd.GeoDataFrame):
-    input_path = RAW_DIR / f"{input_name}.parquet"
-    output_path = PROCESSED_DIR / f"{output_name}.parquet"
+    with Timer(f"clip_layer:{input_name}"):
+        input_path = RAW_DIR / f"{input_name}.parquet"
+        output_path = PROCESSED_DIR / f"{output_name}.parquet"
 
-    if not input_path.exists():
-        print(f"  Skipping {input_name} (not found)")
-        return
+        if not input_path.exists():
+            print(f"  Skipping {input_name} (not found)")
+            return
 
-    if output_path.exists():
-        print(f"  {output_name} already exists, skipping.")
-        return
+        if output_path.exists():
+            print(f"  {output_name} already exists, skipping.")
+            return
 
-    file_size = input_path.stat().st_size
-    if file_size > LARGE_LAYER_THRESHOLD:
-        print(f"  Copying {input_name} ({file_size / 1_000_000:.1f} MB - too large for clip)...")
-        shutil.copy(input_path, output_path)
-        print(f"    Copied without clipping")
-        return
+        file_size = input_path.stat().st_size
+        if file_size > LARGE_LAYER_THRESHOLD:
+            print(f"  Copying {input_name} ({file_size / 1_000_000:.1f} MB - too large for clip)...")
+            shutil.copy(input_path, output_path)
+            print(f"    Copied without clipping")
+            return
 
-    print(f"  Clipping {input_name} ({file_size / 1_000_000:.1f} MB)...")
-    gdf = gpd.read_parquet(input_path)
-    gdf = gdf.set_crs("EPSG:4326", allow_override=True)
+        print(f"  Clipping {input_name} ({file_size / 1_000_000:.1f} MB)...")
+        gdf = gpd.read_parquet(input_path)
+        gdf = gdf.set_crs("EPSG:4326", allow_override=True)
 
-    clipped = gpd.clip(gdf, az_boundary)
+        clipped = gpd.clip(gdf, az_boundary)
 
-    if len(clipped) > 0:
-        clipped.to_parquet(output_path)
-        print(f"    {len(gdf)} -> {len(clipped)} features")
-    else:
-        print(f"    No features after clipping")
+        if len(clipped) > 0:
+            clipped.to_parquet(output_path)
+            print(f"    {len(gdf)} -> {len(clipped)} features")
+        else:
+            print(f"    No features after clipping")
 
 
 def main():
+    pipeline_start = time.time()
     print("=" * 60)
     print("AZ Hunt Planner - Clip to Arizona Boundary")
     print("=" * 60)
@@ -67,8 +70,9 @@ def main():
     for input_name, output_name in layers:
         clip_layer(input_name, output_name, az_boundary)
 
+    pipeline_elapsed = time.time() - pipeline_start
     print("=" * 60)
-    print("Clip complete!")
+    print(f"Clip complete! Total time: {pipeline_elapsed:.1f}s")
     print("=" * 60)
 
 
