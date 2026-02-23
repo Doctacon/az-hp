@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-02-20T03:28:01.864128Z",
+  "decision_id": "8f3de39d1b02e749280b53c226e7096863ebd32594fe2b99b94ac3fbd9b002d2",
+  "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+  "ops": [
+    {
+      "action": "Extract logical sections into dedicated component files under frontend/src/components/. The project already follows this pattern (e.g., LayerPanel.jsx).",
+      "confidence": 0.75,
+      "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+      "id": "frontend-component-extraction",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "frontend",
+        "react",
+        "refactoring"
+      ],
+      "title": "Extract large JSX into dedicated components",
+      "trigger": "When App.jsx or any single component exceeds ~200 lines",
+      "ts": "2026-02-20T03:28:01.864128Z"
+    },
+    {
+      "action": "Both .loom/compound/instincts.json and .loom/compound/INSTINCTS.md must be updated together. The JSON is the source of truth; the MD is the human-readable view.",
+      "confidence": 0.8,
+      "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+      "id": "instincts-json-sync",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "compound",
+        "loom",
+        "memory"
+      ],
+      "title": "Keep instincts.json and INSTINCTS.md in sync",
+      "trigger": "When updating instincts or compound memory",
+      "ts": "2026-02-20T03:28:01.864128Z"
+    },
+    {
+      "action": "Use `make` targets to run pipeline steps. Check the Makefile for available targets and their dependencies before running pipeline scripts directly.",
+      "confidence": 0.7,
+      "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+      "id": "makefile-pipeline-orchestration",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "make",
+        "orchestration",
+        "pipeline"
+      ],
+      "title": "Makefile orchestrates data pipeline",
+      "trigger": "When running or modifying the data pipeline",
+      "ts": "2026-02-20T03:28:01.864128Z"
+    },
+    {
+      "action": "Check pipeline/04_generate_tiles.sh for tile generation logic. This is a standalone bash script, not part of the Python pipeline scripts.",
+      "confidence": 0.65,
+      "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+      "id": "tile-generation-pipeline",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "geospatial",
+        "pipeline",
+        "tiles"
+      ],
+      "title": "Tile generation uses dedicated shell script",
+      "trigger": "When working with the map tile generation step of the pipeline",
+      "ts": "2026-02-20T03:28:01.864128Z"
+    }
+  ],
+  "proposal_blob_sha256": "24e6b8f62aa25d0856a5c693fc9eb59014bedc76d4be168c29532dbab1fc1cd9",
+  "version": 1
+}

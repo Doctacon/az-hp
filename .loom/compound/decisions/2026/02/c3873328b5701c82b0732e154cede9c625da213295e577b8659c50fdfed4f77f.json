@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-02-20T14:50:56.251832Z",
+  "decision_id": "c3873328b5701c82b0732e154cede9c625da213295e577b8659c50fdfed4f77f",
+  "episode_id": "e4921c461a96610218c0dd59e32ddd4183f786d1488fb7fabc5343ed65246ec5",
+  "ops": [
+    {
+      "action": "Extract logical sections into separate component files under frontend/src/components/. The project follows this pattern (e.g., LayerPanel.jsx).",
+      "confidence": 0.65,
+      "episode_id": "e4921c461a96610218c0dd59e32ddd4183f786d1488fb7fabc5343ed65246ec5",
+      "id": "az-hp-frontend-component-extraction",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "react",
+        "refactoring"
+      ],
+      "title": "Extract large JSX into component files",
+      "trigger": "When App.jsx or any component file grows beyond ~150 lines in the az-hp frontend",
+      "ts": "2026-02-20T14:50:56.251832Z"
+    },
+    {
+      "action": "Check the Makefile for existing targets before creating new scripts. Pipeline steps are orchestrated via Make targets.",
+      "confidence": 0.7,
+      "episode_id": "e4921c461a96610218c0dd59e32ddd4183f786d1488fb7fabc5343ed65246ec5",
+      "id": "az-hp-makefile-pipeline",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "makefile",
+        "pipeline"
+      ],
+      "title": "Use Makefile for pipeline orchestration",
+      "trigger": "When working on the az-hp project pipeline (enrichment, tile generation, etc.)",
+      "ts": "2026-02-20T14:50:56.251832Z"
+    },
+    {
+      "action": "Use the 04_generate_tiles.sh script which wraps tippecanoe. Check pipeline/04_generate_tiles.sh for the current tippecanoe flags and layer configuration.",
+      "confidence": 0.6,
+      "episode_id": "e4921c461a96610218c0dd59e32ddd4183f786d1488fb7fabc5343ed65246ec5",
+      "id": "tippecanoe-tile-generation",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "pipeline",
+        "tiles",
+        "tippecanoe"
+      ],
+      "title": "Use tippecanoe for vector tile generation",
+      "trigger": "When generating map tiles from GeoJSON in the az-hp project",
+      "ts": "2026-02-20T14:50:56.251832Z"
+    }
+  ],
+  "proposal_blob_sha256": "2ae5dd23c8c76c6def75631c6aeda171c593a2a31b4ba532dc022707ddd9b659",
+  "version": 1
+}

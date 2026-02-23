@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "ts": "2026-02-22T23:25:04.850Z",
+  "applied": true,
+  "exit_code": 0,
+  "stdout": "{\"decision_id\": \"6978f2106337f4fa0ae31cacab2e3386054cd2f58fcd5a499d802130ebca8760\", \"decision_path\": \"/Users/crlough/Code/personal/az-hp/.loom/compound/decisions/2026/02/6978f2106337f4fa0ae31cacab2e3386054cd2f58fcd5a499d802130ebca8760.json\", \"episode_created\": true, \"episode_id\": \"488d7bab51704b0409bf10493f5ba40501f43faa8bc10f8d04e796438fbfc6b2\", \"episode_path\": \"/Users/crlough/Code/personal/az-hp/.loom/compound/episodes/2026/02/488d7bab51704b0409bf10493f5ba40501f43faa8bc10f8d04e796438fbfc6b2.json\", \"instincts_created\": 4, \"instincts_updated\": 0, \"ok\": true, \"repo\": \"/Users/crlough/Code/personal/az-hp\", \"skills_created\": 0, \"skills_updated\": 0, \"state_updated\": true, \"wrote_docs\": true, \"wrote_instincts\": true}\n"
+}

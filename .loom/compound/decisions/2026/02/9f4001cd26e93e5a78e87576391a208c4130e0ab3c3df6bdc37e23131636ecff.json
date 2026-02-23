@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-02-20T03:23:15.037204Z",
+  "decision_id": "9f4001cd26e93e5a78e87576391a208c4130e0ab3c3df6bdc37e23131636ecff",
+  "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+  "ops": [
+    {
+      "action": "Create an index.js barrel file that re-exports all hooks, enabling clean imports like `import { useMap, useMapSources } from './hooks'`",
+      "confidence": 0.8,
+      "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+      "id": "barrel-export-hooks",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "frontend",
+        "imports",
+        "react"
+      ],
+      "title": "Use barrel exports for custom hooks directories",
+      "trigger": "When creating multiple custom hooks in a hooks/ directory",
+      "ts": "2026-02-20T03:23:15.037204Z"
+    },
+    {
+      "action": "Add corresponding Makefile targets so the full pipeline can be run via make commands. Keep targets composable and ordered.",
+      "confidence": 0.75,
+      "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+      "id": "makefile-pipeline-targets",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "devops",
+        "makefile",
+        "pipeline"
+      ],
+      "title": "Add Makefile targets for pipeline steps",
+      "trigger": "When adding new pipeline scripts",
+      "ts": "2026-02-20T03:23:15.037204Z"
+    },
+    {
+      "action": "Extract logical groups into custom hooks (e.g., useMapSources, useMapLayers, useMapInteractions) with a barrel index.js export. Keep the main component as a thin composition layer.",
+      "confidence": 0.85,
+      "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+      "id": "react-hook-extraction",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "frontend",
+        "react",
+        "refactoring"
+      ],
+      "title": "Extract large React components into custom hooks",
+      "trigger": "When a React component file exceeds ~200 lines with mixed concerns (state, effects, event handlers, rendering)",
+      "ts": "2026-02-20T03:23:15.037204Z"
+    },
+    {
+      "action": "Use a shell script (e.g., pipeline/04_generate_tiles.sh) with tippecanoe or ogr2ogr for vector tile generation. Keep pipeline steps numbered sequentially.",
+      "confidence": 0.7,
+      "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+      "id": "tile-generation-pipeline",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "geospatial",
+        "pipeline",
+        "tiles"
+      ],
+      "title": "Shell scripts for geospatial tile generation",
+      "trigger": "When adding a new pipeline step for generating map tiles from enriched geospatial data",
+      "ts": "2026-02-20T03:23:15.037204Z"
+    }
+  ],
+  "proposal_blob_sha256": "56f4b2c671a67db28c4f4c4628bd617f2330b5b8356bda18a2533f6fb58e0d74",
+  "version": 1
+}

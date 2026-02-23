@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@protomaps/basemaps": "^5.7.0",
     "@turf/turf": "^7.3.4",
+    "maplibre-contour": "^0.1.0",
     "maplibre-gl": "^5.18.0",
     "pmtiles": "^4.4.0",
     "react": "^19.2.0",

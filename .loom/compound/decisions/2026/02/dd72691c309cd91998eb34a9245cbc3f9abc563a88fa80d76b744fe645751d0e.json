@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-02-20T00:51:17.517461Z",
+  "decision_id": "dd72691c309cd91998eb34a9245cbc3f9abc563a88fa80d76b744fe645751d0e",
+  "episode_id": "15e93a4c051522121a704e00ec72f8f276e3f477729fbf7d20005cc42eb7bb38",
+  "ops": [
+    {
+      "action": "Use .jsx file extensions and plain JavaScript React patterns, not TypeScript. The project uses App.jsx as the main entry point.",
+      "confidence": 0.6,
+      "episode_id": "15e93a4c051522121a704e00ec72f8f276e3f477729fbf7d20005cc42eb7bb38",
+      "id": "az-hp-frontend-jsx-pattern",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "conventions",
+        "frontend",
+        "react"
+      ],
+      "title": "Frontend uses JSX with React (not TypeScript)",
+      "trigger": "When working on frontend components in frontend/src/",
+      "ts": "2026-02-20T00:51:17.517461Z"
+    },
+    {
+      "action": "Include `set -euo pipefail` at the top and use explicit error handling. Follow the pattern established in pipeline/04_generate_tiles.sh.",
+      "confidence": 0.55,
+      "episode_id": "15e93a4c051522121a704e00ec72f8f276e3f477729fbf7d20005cc42eb7bb38",
+      "id": "az-hp-pipeline-shell-scripts",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "bash",
+        "conventions",
+        "pipeline"
+      ],
+      "title": "Pipeline shell scripts use bash with set -euo pipefail",
+      "trigger": "When creating or editing shell scripts in the pipeline/ directory",
+      "ts": "2026-02-20T00:51:17.517461Z"
+    }
+  ],
+  "proposal_blob_sha256": "4105a36f2f6ab854c183080b0492ee8ef94652c32581eba8457f25554e388f60",
+  "version": 1
+}

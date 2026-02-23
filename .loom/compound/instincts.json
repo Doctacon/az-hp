@@ -1,4 +1,706 @@
 {
   "version": 1,
-  "instincts": []
+  "instincts": [
+    {
+      "id": "az-hp-data-sources",
+      "title": "AZ-HP uses USGS PAD-US and ScienceBase data",
+      "trigger": "When discussing data sources, download scripts, or ScienceBase URLs in az-hp",
+      "action": "Primary data source is USGS PAD-US (Protected Areas Database) via ScienceBase (e.g. catalog item 6759b69fd34edfeb8710a3ea). Reference the PAD-US data manual at usgs.gov/programs/gap-analysis-project/pad-us-data-manual for schema details.",
+      "tags": [
+        "az-hp",
+        "data",
+        "pad-us",
+        "usgs"
+      ],
+      "confidence": 0.7,
+      "status": "active",
+      "created_at": "2026-02-22T23:25:04.816334Z",
+      "updated_at": "2026-02-22T23:25:04.816334Z",
+      "evidence": [
+        {
+          "ts": "2026-02-22T23:25:04.816334Z",
+          "episode_id": "488d7bab51704b0409bf10493f5ba40501f43faa8bc10f8d04e796438fbfc6b2",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4ca9821ecd0d1270be467dae077d4c9b3c161b0d953b2eea5081b8895c24ea14"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-download-script-simplification",
+      "title": "Keep download scripts focused on fetching data",
+      "trigger": "When modifying pipeline/01_download.py",
+      "action": "The download script was simplified significantly (~80 lines removed). Keep it focused on downloading raw data; transformation logic belongs in later pipeline stages.",
+      "tags": [
+        "data",
+        "pipeline",
+        "python"
+      ],
+      "confidence": 0.65,
+      "status": "active",
+      "created_at": "2026-02-20T21:52:32.190519Z",
+      "updated_at": "2026-02-20T21:52:32.190519Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T21:52:32.190519Z",
+          "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4758831ff0a1396b1cde4ca71a0afb774aea286cc4a5c7f53a7ea400fbbc3b53"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-frontend-app-refactor",
+      "title": "App.jsx was heavily refactored",
+      "trigger": "When working on the frontend React app or debugging UI issues",
+      "action": "Note that App.jsx was significantly simplified (307 lines removed). Component logic was likely extracted into separate component files like LayerPanel.jsx. Check frontend/src/components/ for extracted components.",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "react"
+      ],
+      "confidence": 0.6,
+      "status": "active",
+      "created_at": "2026-02-20T21:52:32.554675Z",
+      "updated_at": "2026-02-20T21:52:32.554675Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T21:52:32.554675Z",
+          "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "55620cd857304c62b2c6a131cd3d59536fd1af0009c8937aeafb78a2117b3ced"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-frontend-component-extraction",
+      "title": "Extract large JSX blocks into separate component files",
+      "trigger": "When App.jsx or any single component file exceeds ~200 lines",
+      "action": "Break large components into smaller files under frontend/src/components/ and import them back. This session reduced App.jsx by ~280 lines by extracting components.",
+      "tags": [
+        "components",
+        "frontend",
+        "react"
+      ],
+      "confidence": 0.75,
+      "status": "active",
+      "created_at": "2026-02-20T14:43:30.991132Z",
+      "updated_at": "2026-02-20T21:52:32.190519Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T14:43:30.991132Z",
+          "episode_id": "6b6ddb5ee674510280b27ef5ec0fd1ea952bd37fe5219b20a401436cc49b330a",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "51418058b65060d53f0aef79cf9093151c3053e71eefe5dc9e979c8dfd5ea404"
+        },
+        {
+          "ts": "2026-02-20T14:50:56.251832Z",
+          "episode_id": "e4921c461a96610218c0dd59e32ddd4183f786d1488fb7fabc5343ed65246ec5",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "aa853ee3cda8b401fa071cca9c6dd339149226a29c6eea408fe795e6b30fa799"
+        },
+        {
+          "ts": "2026-02-20T21:52:31.545973Z",
+          "episode_id": "6992ef1d173f95de9b9b407d46c0060ff0c5d2e72bcff50875f1bcc10cafe0cb",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "82da319959d61f024ea6fed3ac7f24578e76fda777db1919074a6166498c2463"
+        },
+        {
+          "ts": "2026-02-20T21:52:32.190519Z",
+          "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4758831ff0a1396b1cde4ca71a0afb774aea286cc4a5c7f53a7ea400fbbc3b53"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-frontend-jsx-pattern",
+      "title": "Frontend uses JSX with React (not TypeScript)",
+      "trigger": "When working on frontend components in frontend/src/",
+      "action": "Use .jsx file extensions and plain JavaScript React patterns, not TypeScript. The project uses App.jsx as the main entry point.",
+      "tags": [
+        "conventions",
+        "frontend",
+        "react"
+      ],
+      "confidence": 0.6,
+      "status": "active",
+      "created_at": "2026-02-20T00:51:17.517461Z",
+      "updated_at": "2026-02-20T00:51:17.517461Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T00:51:17.517461Z",
+          "episode_id": "15e93a4c051522121a704e00ec72f8f276e3f477729fbf7d20005cc42eb7bb38",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "e96515a87eac152e3942d8edf48c8f500e115709082ba6166bdfa1e04ac56ca5"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-frontend-jsx-react",
+      "title": "Frontend uses JSX with React",
+      "trigger": "When editing the az-hp frontend UI",
+      "action": "The frontend entry point is frontend/src/App.jsx. Use React/JSX conventions when modifying components.",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "react"
+      ],
+      "confidence": 0.55,
+      "status": "active",
+      "created_at": "2026-02-20T01:03:53.462206Z",
+      "updated_at": "2026-02-20T01:03:53.462206Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T01:03:53.462206Z",
+          "episode_id": "08ab15196f535be35da63fa994005d24321037f7926984f9b793966ac7cd117a",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "1d4114763a3cf8de38717b31d0ac30627dbfc7fac9b851a7985b5f6169ef6b99"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-frontend-react",
+      "title": "AZ-HP frontend is a React map viewer",
+      "trigger": "When working on the az-hp frontend",
+      "action": "Frontend is in frontend/ using React (JSX). Main app in App.jsx with LayerPanel component. Uses package.json/package-lock.json for deps. The app visualizes geospatial tile layers generated by the pipeline.",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "react"
+      ],
+      "confidence": 0.7,
+      "status": "active",
+      "created_at": "2026-02-22T23:25:04.816334Z",
+      "updated_at": "2026-02-22T23:25:04.816334Z",
+      "evidence": [
+        {
+          "ts": "2026-02-22T23:25:04.816334Z",
+          "episode_id": "488d7bab51704b0409bf10493f5ba40501f43faa8bc10f8d04e796438fbfc6b2",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4ca9821ecd0d1270be467dae077d4c9b3c161b0d953b2eea5081b8895c24ea14"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-frontend-react-maplibre",
+      "title": "az-hp frontend uses React with MapLibre",
+      "trigger": "When modifying the az-hp frontend or working with map components",
+      "action": "The frontend is in frontend/ and uses React (App.jsx) with components like LayerPanel.jsx. Check frontend/package.json for dependencies. The app likely uses MapLibre GL for map rendering given the tile pipeline.",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "maplibre",
+        "react"
+      ],
+      "confidence": 0.6,
+      "status": "active",
+      "created_at": "2026-02-20T01:14:48.387480Z",
+      "updated_at": "2026-02-20T01:14:48.387480Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T01:14:48.387480Z",
+          "episode_id": "aea43799649d4b3101aa55ac43b3f08ef3ae7614cb3d7ee49ced14feea17a5af",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "7d86d1f664818b41827da0cd59f0678661a7a132179af312dd5b1c9a6268e0ac"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-makefile-pipeline",
+      "title": "Use Makefile for pipeline orchestration",
+      "trigger": "When working on the az-hp project pipeline (enrichment, tile generation, etc.)",
+      "action": "Check the Makefile for existing targets before creating new scripts. Pipeline steps are orchestrated via Make targets.",
+      "tags": [
+        "az-hp",
+        "makefile",
+        "pipeline"
+      ],
+      "confidence": 0.7,
+      "status": "active",
+      "created_at": "2026-02-20T14:50:56.251832Z",
+      "updated_at": "2026-02-20T14:50:56.251832Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T14:50:56.251832Z",
+          "episode_id": "e4921c461a96610218c0dd59e32ddd4183f786d1488fb7fabc5343ed65246ec5",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "aa853ee3cda8b401fa071cca9c6dd339149226a29c6eea408fe795e6b30fa799"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-makefile-pipeline-targets",
+      "title": "Makefile orchestrates the numbered pipeline steps",
+      "trigger": "When adding or modifying pipeline steps",
+      "action": "Update the Makefile targets to reflect changes in pipeline scripts (01_download, 02_clip, 03_enrich, 04_generate_tiles). The Makefile is the canonical entry point for running pipeline stages.",
+      "tags": [
+        "build",
+        "makefile",
+        "pipeline"
+      ],
+      "confidence": 0.8,
+      "status": "active",
+      "created_at": "2026-02-20T21:52:32.190519Z",
+      "updated_at": "2026-02-20T21:52:32.190519Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T21:52:32.190519Z",
+          "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4758831ff0a1396b1cde4ca71a0afb774aea286cc4a5c7f53a7ea400fbbc3b53"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-makefile-targets",
+      "title": "Use Makefile targets for pipeline orchestration",
+      "trigger": "When running pipeline steps or adding new pipeline stages",
+      "action": "Add or update Makefile targets rather than running pipeline scripts directly; the Makefile serves as the orchestration layer for the data pipeline",
+      "tags": [
+        "makefile",
+        "orchestration",
+        "pipeline"
+      ],
+      "confidence": 0.65,
+      "status": "active",
+      "created_at": "2026-02-20T01:14:48.387480Z",
+      "updated_at": "2026-02-20T21:52:31.545973Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T01:14:48.387480Z",
+          "episode_id": "aea43799649d4b3101aa55ac43b3f08ef3ae7614cb3d7ee49ced14feea17a5af",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "7d86d1f664818b41827da0cd59f0678661a7a132179af312dd5b1c9a6268e0ac"
+        },
+        {
+          "ts": "2026-02-20T14:43:30.991132Z",
+          "episode_id": "6b6ddb5ee674510280b27ef5ec0fd1ea952bd37fe5219b20a401436cc49b330a",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "51418058b65060d53f0aef79cf9093151c3053e71eefe5dc9e979c8dfd5ea404"
+        },
+        {
+          "ts": "2026-02-20T21:52:31.545973Z",
+          "episode_id": "6992ef1d173f95de9b9b407d46c0060ff0c5d2e72bcff50875f1bcc10cafe0cb",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "82da319959d61f024ea6fed3ac7f24578e76fda777db1919074a6166498c2463"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-makefile-tasks",
+      "title": "AZ-HP uses Makefile for orchestration",
+      "trigger": "When running pipeline stages or build tasks in az-hp",
+      "action": "Check the Makefile for available targets before running pipeline scripts directly. The Makefile orchestrates pipeline stages and may include dependency tracking between stages.",
+      "tags": [
+        "az-hp",
+        "build",
+        "makefile"
+      ],
+      "confidence": 0.65,
+      "status": "active",
+      "created_at": "2026-02-22T23:25:04.816334Z",
+      "updated_at": "2026-02-22T23:25:04.816334Z",
+      "evidence": [
+        {
+          "ts": "2026-02-22T23:25:04.816334Z",
+          "episode_id": "488d7bab51704b0409bf10493f5ba40501f43faa8bc10f8d04e796438fbfc6b2",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4ca9821ecd0d1270be467dae077d4c9b3c161b0d953b2eea5081b8895c24ea14"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-pipeline-bash-tiles",
+      "title": "Tile generation uses bash script",
+      "trigger": "When modifying or debugging the tile generation pipeline step",
+      "action": "Check pipeline/04_generate_tiles.sh \u2014 it is a bash script (not Python like the other pipeline steps). Verify shell compatibility and use `make tiles` to run it.",
+      "tags": [
+        "az-hp",
+        "pipeline",
+        "tiles"
+      ],
+      "confidence": 0.65,
+      "status": "active",
+      "created_at": "2026-02-20T21:52:32.554675Z",
+      "updated_at": "2026-02-20T21:52:32.554675Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T21:52:32.554675Z",
+          "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "55620cd857304c62b2c6a131cd3d59536fd1af0009c8937aeafb78a2117b3ced"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-pipeline-shell-scripts",
+      "title": "Pipeline shell scripts use bash with set -euo pipefail",
+      "trigger": "When editing or creating shell scripts in the pipeline/ directory",
+      "action": "Always include `set -euo pipefail` at the top of pipeline shell scripts and use explicit error handling for gdal/ogr commands",
+      "tags": [
+        "bash",
+        "pipeline",
+        "shell"
+      ],
+      "confidence": 0.7,
+      "status": "active",
+      "created_at": "2026-02-20T00:51:17.517461Z",
+      "updated_at": "2026-02-20T21:52:32.190519Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T00:51:17.517461Z",
+          "episode_id": "15e93a4c051522121a704e00ec72f8f276e3f477729fbf7d20005cc42eb7bb38",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "e96515a87eac152e3942d8edf48c8f500e115709082ba6166bdfa1e04ac56ca5"
+        },
+        {
+          "ts": "2026-02-20T21:52:31.545973Z",
+          "episode_id": "6992ef1d173f95de9b9b407d46c0060ff0c5d2e72bcff50875f1bcc10cafe0cb",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "82da319959d61f024ea6fed3ac7f24578e76fda777db1919074a6166498c2463"
+        },
+        {
+          "ts": "2026-02-20T21:52:32.190519Z",
+          "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4758831ff0a1396b1cde4ca71a0afb774aea286cc4a5c7f53a7ea400fbbc3b53"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-pipeline-stages",
+      "title": "AZ-HP pipeline is numbered shell/Python scripts",
+      "trigger": "When working on the az-hp geospatial pipeline (01_download, 02_clip, 03_enrich, 04_generate_tiles)",
+      "action": "Each stage is a standalone script in pipeline/. Stage 01 downloads from ScienceBase/USGS, 02 clips to Arizona boundary, 03 enriches with attributes, 04 generates map tiles via shell. Use `uv` to run Python scripts.",
+      "tags": [
+        "az-hp",
+        "geospatial",
+        "pipeline"
+      ],
+      "confidence": 0.75,
+      "status": "active",
+      "created_at": "2026-02-22T23:25:04.816334Z",
+      "updated_at": "2026-02-22T23:25:04.816334Z",
+      "evidence": [
+        {
+          "ts": "2026-02-22T23:25:04.816334Z",
+          "episode_id": "488d7bab51704b0409bf10493f5ba40501f43faa8bc10f8d04e796438fbfc6b2",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "4ca9821ecd0d1270be467dae077d4c9b3c161b0d953b2eea5081b8895c24ea14"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-pipeline-steps",
+      "title": "Pipeline has 4 numbered steps",
+      "trigger": "When working on the data pipeline or Makefile targets",
+      "action": "The pipeline follows numbered steps: 01_download.py, 02_clip_arizona.py, 03_enrich.py, 04_generate_tiles.sh. Steps 1-3 are Python (use uv), step 4 is bash. The Makefile orchestrates these.",
+      "tags": [
+        "az-hp",
+        "makefile",
+        "pipeline"
+      ],
+      "confidence": 0.7,
+      "status": "active",
+      "created_at": "2026-02-20T21:52:32.554675Z",
+      "updated_at": "2026-02-20T21:52:32.554675Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T21:52:32.554675Z",
+          "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "55620cd857304c62b2c6a131cd3d59536fd1af0009c8937aeafb78a2117b3ced"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-tile-generation",
+      "title": "Tile generation pipeline pattern",
+      "trigger": "When working with the az-hp geospatial pipeline, specifically tile generation steps",
+      "action": "Check pipeline/04_generate_tiles.sh for the tile generation workflow. This project uses a numbered pipeline script convention (01_, 02_, 03_, 04_) in the pipeline/ directory.",
+      "tags": [
+        "az-hp",
+        "geospatial",
+        "pipeline"
+      ],
+      "confidence": 0.6,
+      "status": "active",
+      "created_at": "2026-02-20T01:14:48.387480Z",
+      "updated_at": "2026-02-20T14:43:30.991132Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T01:14:48.387480Z",
+          "episode_id": "aea43799649d4b3101aa55ac43b3f08ef3ae7614cb3d7ee49ced14feea17a5af",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "7d86d1f664818b41827da0cd59f0678661a7a132179af312dd5b1c9a6268e0ac"
+        },
+        {
+          "ts": "2026-02-20T14:43:30.991132Z",
+          "episode_id": "6b6ddb5ee674510280b27ef5ec0fd1ea952bd37fe5219b20a401436cc49b330a",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "51418058b65060d53f0aef79cf9093151c3053e71eefe5dc9e979c8dfd5ea404"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-tile-generation-gdal",
+      "title": "Tile generation uses GDAL utilities",
+      "trigger": "When working on map tile generation or the 04_generate_tiles.sh script",
+      "action": "Use gdal2tiles.py or gdal_translate for raster tile generation; check that GDAL is available in the environment and handle missing dependencies gracefully",
+      "tags": [
+        "gdal",
+        "geospatial",
+        "pipeline",
+        "tiles"
+      ],
+      "confidence": 0.7,
+      "status": "active",
+      "created_at": "2026-02-20T21:52:31.545973Z",
+      "updated_at": "2026-02-20T21:52:31.545973Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T21:52:31.545973Z",
+          "episode_id": "6992ef1d173f95de9b9b407d46c0060ff0c5d2e72bcff50875f1bcc10cafe0cb",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "82da319959d61f024ea6fed3ac7f24578e76fda777db1919074a6166498c2463"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-tile-generation-pipeline",
+      "title": "Tile generation uses shell script",
+      "trigger": "When working with the az-hp map tile pipeline or modifying geographic data processing",
+      "action": "Check pipeline/04_generate_tiles.sh for tile generation logic. The pipeline follows a numbered sequence: 03_enrich.py -> 04_generate_tiles.sh.",
+      "tags": [
+        "az-hp",
+        "geospatial",
+        "pipeline"
+      ],
+      "confidence": 0.6,
+      "status": "active",
+      "created_at": "2026-02-20T01:03:53.462206Z",
+      "updated_at": "2026-02-20T01:03:53.462206Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T01:03:53.462206Z",
+          "episode_id": "08ab15196f535be35da63fa994005d24321037f7926984f9b793966ac7cd117a",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "1d4114763a3cf8de38717b31d0ac30627dbfc7fac9b851a7985b5f6169ef6b99"
+        }
+      ]
+    },
+    {
+      "id": "az-hp-uses-makefile",
+      "title": "Project uses Makefile for orchestration",
+      "trigger": "When running pipeline commands or looking for build/run targets",
+      "action": "Check the Makefile for available targets. The Makefile was recently updated (13 lines changed) and orchestrates the pipeline steps.",
+      "tags": [
+        "az-hp",
+        "makefile"
+      ],
+      "confidence": 0.65,
+      "status": "active",
+      "created_at": "2026-02-20T21:52:32.554675Z",
+      "updated_at": "2026-02-20T21:52:32.554675Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T21:52:32.554675Z",
+          "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "55620cd857304c62b2c6a131cd3d59536fd1af0009c8937aeafb78a2117b3ced"
+        }
+      ]
+    },
+    {
+      "id": "barrel-export-hooks",
+      "title": "Use barrel exports for custom hooks directories",
+      "trigger": "When creating multiple custom hooks in a hooks/ directory",
+      "action": "Create an index.js barrel file that re-exports all hooks, enabling clean imports like `import { useMap, useMapSources } from './hooks'`",
+      "tags": [
+        "frontend",
+        "imports",
+        "react"
+      ],
+      "confidence": 0.8,
+      "status": "active",
+      "created_at": "2026-02-20T03:23:15.037204Z",
+      "updated_at": "2026-02-20T03:23:15.037204Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T03:23:15.037204Z",
+          "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "6507cff21baa7556c8748e2cc86c2f9aadd26665fee07abd00a9ac4bf953b004"
+        }
+      ]
+    },
+    {
+      "id": "frontend-component-extraction",
+      "title": "Extract large JSX into dedicated components",
+      "trigger": "When App.jsx or any single component exceeds ~200 lines",
+      "action": "Extract logical sections into dedicated component files under frontend/src/components/. The project already follows this pattern (e.g., LayerPanel.jsx).",
+      "tags": [
+        "frontend",
+        "react",
+        "refactoring"
+      ],
+      "confidence": 0.75,
+      "status": "active",
+      "created_at": "2026-02-20T03:28:01.864128Z",
+      "updated_at": "2026-02-20T03:28:01.864128Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T03:28:01.864128Z",
+          "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "992f83d2f73a79f74b3a2114338511b7c737a5e6f66c7b6b6b3c280725902820"
+        }
+      ]
+    },
+    {
+      "id": "instincts-json-sync",
+      "title": "Keep instincts.json and INSTINCTS.md in sync",
+      "trigger": "When updating instincts or compound memory",
+      "action": "Both .loom/compound/instincts.json and .loom/compound/INSTINCTS.md must be updated together. The JSON is the source of truth; the MD is the human-readable view.",
+      "tags": [
+        "compound",
+        "loom",
+        "memory"
+      ],
+      "confidence": 0.8,
+      "status": "active",
+      "created_at": "2026-02-20T03:28:01.864128Z",
+      "updated_at": "2026-02-20T03:28:01.864128Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T03:28:01.864128Z",
+          "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "992f83d2f73a79f74b3a2114338511b7c737a5e6f66c7b6b6b3c280725902820"
+        }
+      ]
+    },
+    {
+      "id": "makefile-pipeline-orchestration",
+      "title": "Makefile orchestrates data pipeline",
+      "trigger": "When running or modifying the data pipeline",
+      "action": "Use `make` targets to run pipeline steps. Check the Makefile for available targets and their dependencies before running pipeline scripts directly.",
+      "tags": [
+        "make",
+        "orchestration",
+        "pipeline"
+      ],
+      "confidence": 0.7,
+      "status": "active",
+      "created_at": "2026-02-20T03:28:01.864128Z",
+      "updated_at": "2026-02-20T03:28:01.864128Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T03:28:01.864128Z",
+          "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "992f83d2f73a79f74b3a2114338511b7c737a5e6f66c7b6b6b3c280725902820"
+        }
+      ]
+    },
+    {
+      "id": "makefile-pipeline-targets",
+      "title": "Add Makefile targets for pipeline steps",
+      "trigger": "When adding new pipeline scripts",
+      "action": "Add corresponding Makefile targets so the full pipeline can be run via make commands. Keep targets composable and ordered.",
+      "tags": [
+        "devops",
+        "makefile",
+        "pipeline"
+      ],
+      "confidence": 0.75,
+      "status": "active",
+      "created_at": "2026-02-20T03:23:15.037204Z",
+      "updated_at": "2026-02-20T03:23:15.037204Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T03:23:15.037204Z",
+          "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "6507cff21baa7556c8748e2cc86c2f9aadd26665fee07abd00a9ac4bf953b004"
+        }
+      ]
+    },
+    {
+      "id": "react-hook-extraction",
+      "title": "Extract large React components into custom hooks",
+      "trigger": "When a React component file exceeds ~200 lines with mixed concerns (state, effects, event handlers, rendering)",
+      "action": "Extract logical groups into custom hooks (e.g., useMapSources, useMapLayers, useMapInteractions) with a barrel index.js export. Keep the main component as a thin composition layer.",
+      "tags": [
+        "frontend",
+        "react",
+        "refactoring"
+      ],
+      "confidence": 0.85,
+      "status": "active",
+      "created_at": "2026-02-20T03:23:15.037204Z",
+      "updated_at": "2026-02-20T03:23:15.037204Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T03:23:15.037204Z",
+          "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "6507cff21baa7556c8748e2cc86c2f9aadd26665fee07abd00a9ac4bf953b004"
+        }
+      ]
+    },
+    {
+      "id": "tile-generation-pipeline",
+      "title": "Tile generation uses dedicated shell script",
+      "trigger": "When working with the map tile generation step of the pipeline",
+      "action": "Check pipeline/04_generate_tiles.sh for tile generation logic. This is a standalone bash script, not part of the Python pipeline scripts.",
+      "tags": [
+        "geospatial",
+        "pipeline",
+        "tiles"
+      ],
+      "confidence": 0.65,
+      "status": "active",
+      "created_at": "2026-02-20T03:23:15.037204Z",
+      "updated_at": "2026-02-20T03:28:01.864128Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T03:23:15.037204Z",
+          "episode_id": "452f7b6620b2fd5a1cd076d465f95f25e33bc64277721d421a04da798f24464e",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "6507cff21baa7556c8748e2cc86c2f9aadd26665fee07abd00a9ac4bf953b004"
+        },
+        {
+          "ts": "2026-02-20T03:28:01.864128Z",
+          "episode_id": "1d03c6ad9c9a99f123cdf8b90388271128ae8ffba87d956a63088f21fb200498",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "992f83d2f73a79f74b3a2114338511b7c737a5e6f66c7b6b6b3c280725902820"
+        }
+      ]
+    },
+    {
+      "id": "tippecanoe-tile-generation",
+      "title": "Use tippecanoe for vector tile generation",
+      "trigger": "When generating map tiles from GeoJSON in the az-hp project",
+      "action": "Use the 04_generate_tiles.sh script which wraps tippecanoe. Check pipeline/04_generate_tiles.sh for the current tippecanoe flags and layer configuration.",
+      "tags": [
+        "az-hp",
+        "pipeline",
+        "tiles",
+        "tippecanoe"
+      ],
+      "confidence": 0.6,
+      "status": "active",
+      "created_at": "2026-02-20T14:50:56.251832Z",
+      "updated_at": "2026-02-20T14:50:56.251832Z",
+      "evidence": [
+        {
+          "ts": "2026-02-20T14:50:56.251832Z",
+          "episode_id": "e4921c461a96610218c0dd59e32ddd4183f786d1488fb7fabc5343ed65246ec5",
+          "head_sha": "12fa54d6612b9850af96591a8b72f9a7375bccaf",
+          "patch_sha256": "aa853ee3cda8b401fa071cca9c6dd339149226a29c6eea408fe795e6b30fa799"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-02-20T14:43:30.991132Z",
+  "decision_id": "f1c903b4adb45cdaeee715b8ff7ba44296120dfc02b7474f16ad3b8994cbac46",
+  "episode_id": "6b6ddb5ee674510280b27ef5ec0fd1ea952bd37fe5219b20a401436cc49b330a",
+  "ops": [
+    {
+      "action": "Extract logical sections into separate component files under frontend/src/components/. The project already has LayerPanel.jsx as a pattern to follow.",
+      "confidence": 0.65,
+      "episode_id": "6b6ddb5ee674510280b27ef5ec0fd1ea952bd37fe5219b20a401436cc49b330a",
+      "id": "az-hp-frontend-component-extraction",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "react"
+      ],
+      "title": "Extract large JSX into component files",
+      "trigger": "When App.jsx or a similar root component grows beyond ~150 lines in the az-hp frontend",
+      "ts": "2026-02-20T14:43:30.991132Z"
+    },
+    {
+      "action": "Add corresponding Makefile targets. The project uses Make as the top-level orchestrator for pipeline steps. Check existing targets in Makefile before adding new ones.",
+      "confidence": 0.7,
+      "episode_id": "6b6ddb5ee674510280b27ef5ec0fd1ea952bd37fe5219b20a401436cc49b330a",
+      "id": "az-hp-makefile-targets",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "makefile",
+        "pipeline"
+      ],
+      "title": "Use Makefile for pipeline orchestration",
+      "trigger": "When adding new pipeline steps or build targets to az-hp",
+      "ts": "2026-02-20T14:43:30.991132Z"
+    },
+    {
+      "action": "Check pipeline/04_generate_tiles.sh for the tile generation workflow. This project uses a numbered pipeline script convention (01_, 02_, 03_, 04_) in the pipeline/ directory.",
+      "confidence": 0.6,
+      "episode_id": "6b6ddb5ee674510280b27ef5ec0fd1ea952bd37fe5219b20a401436cc49b330a",
+      "id": "az-hp-tile-generation",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "geospatial",
+        "pipeline"
+      ],
+      "title": "Tile generation pipeline pattern",
+      "trigger": "When working with the az-hp geospatial pipeline, specifically tile generation steps",
+      "ts": "2026-02-20T14:43:30.991132Z"
+    }
+  ],
+  "proposal_blob_sha256": "5541274873c137dbcdc5574dc93b4dbc8fbb4eee9e0466b08767cf592f5d20d1",
+  "version": 1
+}

@@ -17,102 +17,90 @@ echo "============================================"
 
 cd "$PROJECT_DIR"
 
-echo "Converting Parquet layers to GeoJSON..."
-uv run python -c "
-import geopandas as gpd
-from pathlib import Path
-
-processed_dir = Path('$PROCESSED_DIR')
-layers = [
-    'roads_enriched',
-    'places_hunt',
-    'overture_water_clipped',
-    'overture_land_cover_clipped',
-    'overture_buildings_clipped',
-]
-
-for layer in layers:
-    parquet_path = processed_dir / f'{layer}.parquet'
-    if parquet_path.exists():
-        print(f'Converting {layer}...')
-        gdf = gpd.read_parquet(parquet_path)
-        geojson_path = processed_dir / f'{layer}.geojson'
-        gdf.to_file(geojson_path, driver='GeoJSON')
-        print(f'  {layer}: {len(gdf)} features')
-    else:
-        print(f'Skipping {layer} (not found)')
-"
-
-echo ""
 echo "Generating PMTiles with tippecanoe..."
+echo "  (Streaming parquet → tippecanoe via process substitution)"
+echo ""
 
-echo "  Roads..."
-tippecanoe \
-    -o "$TILES_DIR/roads.pmtiles" \
-    -l roads \
-    --minimum-zoom=6 \
-    --maximum-zoom=14 \
-    --drop-densest-as-needed \
-    --extend-zooms-if-still-dropping \
-    --force \
-    "$PROCESSED_DIR/roads_enriched.geojson" \
-    2>/dev/null || echo "    Warning: roads tile generation had issues"
-
-echo "  Places..."
-if [ -f "$PROCESSED_DIR/places_hunt.geojson" ]; then
+generate_tiles_parquet() {
+    local name=$1
+    local source_layer=$2
+    local minzoom=$3
+    local maxzoom=$4
+    local extra_opts=$5
+    local input_path="$PROCESSED_DIR/${name}.parquet"
+    local output_path="$TILES_DIR/${source_layer}.pmtiles"
+    
+    if [ ! -f "$input_path" ]; then
+        echo "  Skipping $name (parquet not found)"
+        return 1
+    fi
+    
+    echo "  $name..."
     tippecanoe \
-        -o "$TILES_DIR/places.pmtiles" \
-        -l places \
-        --minimum-zoom=8 \
-        --maximum-zoom=14 \
-        -r1 \
+        -o "$output_path" \
+        -l "$source_layer" \
+        --minimum-zoom=$minzoom \
+        --maximum-zoom=$maxzoom \
+        $extra_opts \
         --force \
-        "$PROCESSED_DIR/places_hunt.geojson" \
-        2>/dev/null || echo "    Warning: places tile generation had issues"
-fi
+        <(ogr2ogr -f GeoJSONSeq /vsistdout/ "$input_path" 2>/dev/null) \
+        2>&1 | grep -E "(features|Warning|Error)" || true
+}
 
-echo "  Water..."
-if [ -f "$PROCESSED_DIR/overture_water_clipped.geojson" ]; then
+generate_tiles_geojson() {
+    local name=$1
+    local source_layer=$2
+    local minzoom=$3
+    local maxzoom=$4
+    local extra_opts=$5
+    local input_path="$PROCESSED_DIR/${name}.geojson"
+    local output_path="$TILES_DIR/${source_layer}.pmtiles"
+    
+    if [ ! -f "$input_path" ]; then
+        echo "  Skipping $name (geojson not found)"
+        return 1
+    fi
+    
+    echo "  $name..."
     tippecanoe \
-        -o "$TILES_DIR/water.pmtiles" \
-        -l water \
-        --minimum-zoom=6 \
-        --maximum-zoom=14 \
-        --coalesce-densest-as-needed \
+        -o "$output_path" \
+        -l "$source_layer" \
+        --minimum-zoom=$minzoom \
+        --maximum-zoom=$maxzoom \
+        $extra_opts \
         --force \
-        "$PROCESSED_DIR/overture_water_clipped.geojson" \
-        2>/dev/null || echo "    Warning: water tile generation had issues"
-fi
+        "$input_path" \
+        2>&1 | grep -E "(features|Warning|Error)" || true
+}
 
-echo "  Land cover..."
-if [ -f "$PROCESSED_DIR/overture_land_cover_clipped.geojson" ]; then
-    tippecanoe \
-        -o "$TILES_DIR/landcover.pmtiles" \
-        -l landcover \
-        --minimum-zoom=4 \
-        --maximum-zoom=12 \
-        --coalesce-densest-as-needed \
-        --force \
-        "$PROCESSED_DIR/overture_land_cover_clipped.geojson" \
-        2>/dev/null || echo "    Warning: landcover tile generation had issues"
-fi
+echo "Starting parallel tile generation..."
 
-echo "  Buildings..."
-if [ -f "$PROCESSED_DIR/overture_buildings_clipped.geojson" ]; then
-    tippecanoe \
-        -o "$TILES_DIR/buildings.pmtiles" \
-        -l buildings \
-        --minimum-zoom=12 \
-        --maximum-zoom=14 \
-        --drop-densest-as-needed \
-        --force \
-        "$PROCESSED_DIR/overture_buildings_clipped.geojson" \
-        2>/dev/null || echo "    Warning: buildings tile generation had issues"
-fi
+generate_tiles_parquet "roads_enriched" "roads" 6 14 "--drop-densest-as-needed --extend-zooms-if-still-dropping" &
+PID1=$!
+
+generate_tiles_parquet "places_hunt" "places" 8 14 "-r1" &
+PID2=$!
+
+generate_tiles_geojson "hunt_units" "hunt-units" 6 14 "--no-tile-size-limit" &
+PID3=$!
+
+generate_tiles_geojson "land_ownership" "land-ownership" 8 14 "--drop-densest-as-needed --coalesce-densest-as-needed" &
+PID4=$!
+
+echo "Waiting for tile generation to complete..."
+wait $PID1 || echo "  roads had issues"
+wait $PID2 || echo "  places had issues"
+wait $PID3 || echo "  hunt-units had issues"
+wait $PID4 || echo "  land-ownership had issues"
 
 echo ""
 echo "Copying PMTiles to frontend..."
-cp "$TILES_DIR"/*.pmtiles "$FRONTEND_DATA/" 2>/dev/null || echo "  No PMTiles to copy"
+for f in roads places hunt-units land-ownership; do
+    if [ -f "$TILES_DIR/${f}.pmtiles" ]; then
+        cp "$TILES_DIR/${f}.pmtiles" "$FRONTEND_DATA/"
+        echo "  Copied ${f}.pmtiles"
+    fi
+done
 
 echo ""
 echo "============================================"

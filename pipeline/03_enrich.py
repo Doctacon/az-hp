@@ -17,6 +17,11 @@ PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def enrich_roads():
+    output_path = PROCESSED_DIR / "roads_enriched.parquet"
+    if output_path.exists() and output_path.stat().st_size > 1_000_000:
+        print("Roads already enriched, skipping.")
+        return
+
     print("Enriching roads with land ownership and hunt unit data...")
 
     print("  Loading roads...")
@@ -31,7 +36,7 @@ def enrich_roads():
     gmus = gpd.read_file(RAW_DIR / "azgfd_gmu.geojson")
     gmus = gmus.to_crs("EPSG:4326")
 
-    sma_cols = ["geometry", "ADMIN_AGENCY_CODE", "ADMIN_UNIT_NAME", "ADMIN_DEPT_CODE"]
+    sma_cols = ["geometry", "ADMIN_AGENCY_CODE", "ADMIN_UNIT_NAME"]
     sma_filtered = sma[[c for c in sma_cols if c in sma.columns]]
 
     print("  Creating representative points for roads...")
@@ -55,7 +60,6 @@ def enrich_roads():
 
     roads_with_owner["land_status"] = roads_with_owner.apply(map_agency_code, axis=1)
 
-    # Drop index_right before second join to avoid column name conflict
     roads_with_owner = roads_with_owner.drop(columns=["index_right"], errors="ignore")
 
     print("  Spatial join: roads x hunt units...")
@@ -121,6 +125,11 @@ def enrich_roads():
 
 
 def filter_hunt_pois():
+    output_path = PROCESSED_DIR / "places_hunt.parquet"
+    if output_path.exists() and output_path.stat().st_size > 10_000:
+        print("Places already filtered, skipping.")
+        return
+
     print("Filtering hunt-relevant POIs...")
 
     print("  Loading places...")
@@ -173,15 +182,15 @@ def prepare_static_layers():
     gmu_gdf = gpd.read_file(RAW_DIR / "azgfd_gmu.geojson")
     keep_cols = ["GMUNAME", "REG_NAME", "ACRES", "LANDOWN", "HUNT", "AGFDLink", "geometry"]
     gmu_filtered = gmu_gdf[[c for c in keep_cols if c in gmu_gdf.columns]]
-    gmu_filtered.to_file(frontend_data / "azgfd_gmu.geojson", driver="GeoJSON")
+    gmu_filtered.to_file(PROCESSED_DIR / "hunt_units.geojson", driver="GeoJSON")
 
     print("  Copying BLM SMA...")
     sma_gdf = gpd.read_file(RAW_DIR / "blm_sma_az.geojson")
-    keep_cols = ["ADMIN_AGENCY_CODE", "ADMIN_UNIT_NAME", "ADMIN_DEPT_CODE", "geometry"]
+    keep_cols = ["ADMIN_AGENCY_CODE", "ADMIN_UNIT_NAME", "geometry"]
     sma_filtered = sma_gdf[[c for c in keep_cols if c in sma_gdf.columns]]
-    sma_filtered.to_file(frontend_data / "blm_sma_az.geojson", driver="GeoJSON")
+    sma_filtered.to_file(PROCESSED_DIR / "land_ownership.geojson", driver="GeoJSON")
 
-    print("  Static layers saved.")
+    print("  Static layers saved to processed/ for PMTiles generation.")
 
 
 def main():

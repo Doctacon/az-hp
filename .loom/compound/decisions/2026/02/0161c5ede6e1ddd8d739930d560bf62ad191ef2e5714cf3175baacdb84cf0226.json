@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-02-20T01:14:48.387480Z",
+  "decision_id": "0161c5ede6e1ddd8d739930d560bf62ad191ef2e5714cf3175baacdb84cf0226",
+  "episode_id": "aea43799649d4b3101aa55ac43b3f08ef3ae7614cb3d7ee49ced14feea17a5af",
+  "ops": [
+    {
+      "action": "The frontend is in frontend/ and uses React (App.jsx) with components like LayerPanel.jsx. Check frontend/package.json for dependencies. The app likely uses MapLibre GL for map rendering given the tile pipeline.",
+      "confidence": 0.6,
+      "episode_id": "aea43799649d4b3101aa55ac43b3f08ef3ae7614cb3d7ee49ced14feea17a5af",
+      "id": "az-hp-frontend-react-maplibre",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "maplibre",
+        "react"
+      ],
+      "title": "az-hp frontend uses React with MapLibre",
+      "trigger": "When modifying the az-hp frontend or working with map components",
+      "ts": "2026-02-20T01:14:48.387480Z"
+    },
+    {
+      "action": "Check the Makefile for available targets before suggesting raw shell commands. The project uses Make targets to orchestrate the data pipeline (enrich, generate tiles, etc.) and frontend builds.",
+      "confidence": 0.7,
+      "episode_id": "aea43799649d4b3101aa55ac43b3f08ef3ae7614cb3d7ee49ced14feea17a5af",
+      "id": "az-hp-makefile-targets",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "makefile",
+        "pipeline"
+      ],
+      "title": "az-hp uses Makefile for pipeline orchestration",
+      "trigger": "When working on the az-hp project and needing to run pipeline steps or build commands",
+      "ts": "2026-02-20T01:14:48.387480Z"
+    },
+    {
+      "action": "Reference pipeline/04_generate_tiles.sh for tile generation. The pipeline is numbered sequentially (03_enrich.py, 04_generate_tiles.sh, etc.) and Makefile targets wrap these scripts.",
+      "confidence": 0.65,
+      "episode_id": "aea43799649d4b3101aa55ac43b3f08ef3ae7614cb3d7ee49ced14feea17a5af",
+      "id": "az-hp-tile-generation",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "pipeline",
+        "spatial",
+        "tiles"
+      ],
+      "title": "az-hp has a tile generation pipeline step",
+      "trigger": "When working with map tiles or spatial data in az-hp",
+      "ts": "2026-02-20T01:14:48.387480Z"
+    }
+  ],
+  "proposal_blob_sha256": "f756e298e85511674c751a7e8a545a745b2cba56253b0ae86634fdba05d2308b",
+  "version": 1
+}

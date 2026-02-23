@@ -23,6 +23,21 @@ AGENCY_ACCESS_MAP = {
     "BOR": "public_bor",
     "DOD": "restricted_military",
     "STP": "state_trust",
+    "STATE": "state_trust",
+    "BIA": "tribal",
+}
+
+BLM_SMA_BASE_URL = "https://gis.blm.gov/arcgis/rest/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer"
+
+BLM_SMA_FEATURES_LAYERS = {
+    "DOD": 20,
+    "BLM": 21,
+    "NPS": 22,
+    "USFS": 23,
+    "FWS": 24,
+    "USBR": 25,
+    "BIA": 26,
+    "STATE": 28,
 }
 
 HUNT_RELEVANT_ROAD_CLASSES = {"track", "path", "footway", "service", "tertiary", "unclassified"}
@@ -38,18 +53,4 @@ HUNT_POI_CATEGORIES = [
 
 AZGFD_GMU_URL = "https://hub.arcgis.com/api/download/v1/items/9b4aa5c5f1014363bf3139ed931e205d/geojson?layers=0"
 
-BLM_SMA_BASE_URL = "https://gis.blm.gov/arcgis/rest/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer"
-
-BLM_SMA_LAYERS = {
-    "BLM": 7,
-    "NPS": 8,
-    "USFS": 9,
-    "FWS": 10,
-    "USBR": 11,
-    "DOD": 6,
-    "STATE": 14,
-}
-
 AZ_BOUNDARY_URL = "https://www2.census.gov/geo/tiger/GENZ2022/shp/cb_2022_us_state_500k.zip"
-
-USFS_FOREST_URL = "https://data.fs.usda.gov/geodata/edw/edw_resources/shp/BdyAdm_LSRS_AdministrativeForest.zip"

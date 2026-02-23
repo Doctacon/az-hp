@@ -1,6 +1,6 @@
-.PHONY: download clip enrich tiles build-frontend all clean
+.PHONY: download clip enrich tiles basemap terrain build-frontend all clean
 
-all: download clip enrich tiles build-frontend
+all: download clip enrich tiles basemap build-frontend
 
 download:
 	@echo "=== Downloading data ==="
@@ -17,6 +17,18 @@ enrich:
 tiles:
 	@echo "=== Generating PMTiles ==="
 	bash pipeline/04_generate_tiles.sh
+
+basemap:
+	@echo "=== Downloading Protomaps basemap ==="
+	pmtiles extract https://build.protomaps.com/$(shell date +%Y%m%d).pmtiles \
+		frontend/public/data/basemap.pmtiles \
+		--bbox=-115.5,30.5,-108.0,37.5
+
+terrain:
+	@echo "=== Downloading Mapterhorn terrain DEM ==="
+	pmtiles extract https://download.mapterhorn.com/planet.pmtiles \
+		frontend/public/data/terrain.pmtiles \
+		--bbox=-115.0,31.0,-108.5,37.5
 
 build-frontend:
 	@echo "=== Building frontend ==="
@@ -36,11 +48,13 @@ clean:
 help:
 	@echo "AZ Hunt Planner - Makefile commands"
 	@echo ""
-	@echo "  make all            - Run full pipeline (download, clip, enrich, tiles, build)"
+	@echo "  make all            - Run full pipeline (download, clip, enrich, tiles, basemap, build)"
 	@echo "  make download       - Download all data sources"
 	@echo "  make clip           - Clip Overture data to Arizona boundary"
 	@echo "  make enrich         - Enrich roads with land ownership and hunt units"
 	@echo "  make tiles          - Generate PMTiles from processed data"
+	@echo "  make basemap        - Download Protomaps Arizona basemap"
+	@echo "  make terrain        - Download Mapterhorn terrain DEM for Arizona"
 	@echo "  make build-frontend - Build frontend for production"
 	@echo "  make dev-frontend   - Start frontend development server"
 	@echo "  make clean          - Remove all generated data and build artifacts"

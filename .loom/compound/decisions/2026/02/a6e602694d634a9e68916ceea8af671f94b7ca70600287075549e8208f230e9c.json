@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-02-20T01:03:53.462206Z",
+  "decision_id": "a6e602694d634a9e68916ceea8af671f94b7ca70600287075549e8208f230e9c",
+  "episode_id": "08ab15196f535be35da63fa994005d24321037f7926984f9b793966ac7cd117a",
+  "ops": [
+    {
+      "action": "The frontend entry point is frontend/src/App.jsx. Use React/JSX conventions when modifying components.",
+      "confidence": 0.55,
+      "episode_id": "08ab15196f535be35da63fa994005d24321037f7926984f9b793966ac7cd117a",
+      "id": "az-hp-frontend-jsx-react",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "react"
+      ],
+      "title": "Frontend uses JSX with React",
+      "trigger": "When editing the az-hp frontend UI",
+      "ts": "2026-02-20T01:03:53.462206Z"
+    },
+    {
+      "action": "Check pipeline/04_generate_tiles.sh for tile generation logic. The pipeline follows a numbered sequence: 03_enrich.py -> 04_generate_tiles.sh.",
+      "confidence": 0.6,
+      "episode_id": "08ab15196f535be35da63fa994005d24321037f7926984f9b793966ac7cd117a",
+      "id": "az-hp-tile-generation-pipeline",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "geospatial",
+        "pipeline"
+      ],
+      "title": "Tile generation uses shell script",
+      "trigger": "When working with the az-hp map tile pipeline or modifying geographic data processing",
+      "ts": "2026-02-20T01:03:53.462206Z"
+    }
+  ],
+  "proposal_blob_sha256": "dd0f0b53008195e580e2d80def3d212d778be1e04b10e956eb92447eddb12d87",
+  "version": 1
+}

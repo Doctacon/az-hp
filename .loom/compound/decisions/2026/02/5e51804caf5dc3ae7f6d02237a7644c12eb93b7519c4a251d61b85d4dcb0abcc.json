@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-02-20T21:52:32.554675Z",
+  "decision_id": "5e51804caf5dc3ae7f6d02237a7644c12eb93b7519c4a251d61b85d4dcb0abcc",
+  "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+  "ops": [
+    {
+      "action": "Note that App.jsx was significantly simplified (307 lines removed). Component logic was likely extracted into separate component files like LayerPanel.jsx. Check frontend/src/components/ for extracted components.",
+      "confidence": 0.6,
+      "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+      "id": "az-hp-frontend-app-refactor",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "frontend",
+        "react"
+      ],
+      "title": "App.jsx was heavily refactored",
+      "trigger": "When working on the frontend React app or debugging UI issues",
+      "ts": "2026-02-20T21:52:32.554675Z"
+    },
+    {
+      "action": "Check pipeline/04_generate_tiles.sh \u2014 it is a bash script (not Python like the other pipeline steps). Verify shell compatibility and use `make tiles` to run it.",
+      "confidence": 0.65,
+      "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+      "id": "az-hp-pipeline-bash-tiles",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "pipeline",
+        "tiles"
+      ],
+      "title": "Tile generation uses bash script",
+      "trigger": "When modifying or debugging the tile generation pipeline step",
+      "ts": "2026-02-20T21:52:32.554675Z"
+    },
+    {
+      "action": "The pipeline follows numbered steps: 01_download.py, 02_clip_arizona.py, 03_enrich.py, 04_generate_tiles.sh. Steps 1-3 are Python (use uv), step 4 is bash. The Makefile orchestrates these.",
+      "confidence": 0.7,
+      "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+      "id": "az-hp-pipeline-steps",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "makefile",
+        "pipeline"
+      ],
+      "title": "Pipeline has 4 numbered steps",
+      "trigger": "When working on the data pipeline or Makefile targets",
+      "ts": "2026-02-20T21:52:32.554675Z"
+    },
+    {
+      "action": "Check the Makefile for available targets. The Makefile was recently updated (13 lines changed) and orchestrates the pipeline steps.",
+      "confidence": 0.65,
+      "episode_id": "19e53d613783c93ab4433bde879a8f432a218ab8483853ac74b8a966b756b536",
+      "id": "az-hp-uses-makefile",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "az-hp",
+        "makefile"
+      ],
+      "title": "Project uses Makefile for orchestration",
+      "trigger": "When running pipeline commands or looking for build/run targets",
+      "ts": "2026-02-20T21:52:32.554675Z"
+    }
+  ],
+  "proposal_blob_sha256": "b8d1998a475929f29052225cbf637bbdb3d36df128fb086bdd077214e29b46d6",
+  "version": 1
+}

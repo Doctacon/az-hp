@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-02-20T21:52:32.190519Z",
+  "decision_id": "0394b94aa8b72360727a25f14edd1afd4ebb51f4062ef2e83e8eba6d898bb23a",
+  "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+  "ops": [
+    {
+      "action": "The download script was simplified significantly (~80 lines removed). Keep it focused on downloading raw data; transformation logic belongs in later pipeline stages.",
+      "confidence": 0.65,
+      "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+      "id": "az-hp-download-script-simplification",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "data",
+        "pipeline",
+        "python"
+      ],
+      "title": "Keep download scripts focused on fetching data",
+      "trigger": "When modifying pipeline/01_download.py",
+      "ts": "2026-02-20T21:52:32.190519Z"
+    },
+    {
+      "action": "Break large components into smaller files under frontend/src/components/ and import them back. This session reduced App.jsx by ~280 lines by extracting components.",
+      "confidence": 0.75,
+      "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+      "id": "az-hp-frontend-component-extraction",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "components",
+        "frontend",
+        "react"
+      ],
+      "title": "Extract large JSX blocks into separate component files",
+      "trigger": "When App.jsx or any single component file exceeds ~200 lines",
+      "ts": "2026-02-20T21:52:32.190519Z"
+    },
+    {
+      "action": "Update the Makefile targets to reflect changes in pipeline scripts (01_download, 02_clip, 03_enrich, 04_generate_tiles). The Makefile is the canonical entry point for running pipeline stages.",
+      "confidence": 0.8,
+      "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+      "id": "az-hp-makefile-pipeline-targets",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "build",
+        "makefile",
+        "pipeline"
+      ],
+      "title": "Makefile orchestrates the numbered pipeline steps",
+      "trigger": "When adding or modifying pipeline steps",
+      "ts": "2026-02-20T21:52:32.190519Z"
+    },
+    {
+      "action": "Always include `set -euo pipefail` at the top of pipeline shell scripts and use explicit error handling for gdal/ogr commands",
+      "confidence": 0.7,
+      "episode_id": "24dd244f4a4706025cf2886fbc201f34804cfeb9accca4b0479e0dd88af2c3fc",
+      "id": "az-hp-pipeline-shell-scripts",
+      "notes": "",
+      "op": "instinct.upsert",
+      "tags": [
+        "bash",
+        "pipeline",
+        "shell"
+      ],
+      "title": "Pipeline shell scripts use bash with set -euo pipefail",
+      "trigger": "When editing or creating shell scripts in the pipeline/ directory",
+      "ts": "2026-02-20T21:52:32.190519Z"
+    }
+  ],
+  "proposal_blob_sha256": "19a8457826407756356cce5f7f73b73c651f013ae7ba8a1990c046eee7a28c2c",
+  "version": 1
+}
