@@ -117,3 +117,359 @@
 .info-section a:hover {
   text-decoration: underline;
 }
+
+/* Waypoint Panel */
+.waypoint-panel {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  z-index: 1;
+  max-width: 280px;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.2s ease, padding 0.2s ease;
+}
+
+.waypoint-panel.collapsed {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.waypoint-panel .panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.waypoint-panel.collapsed .panel-header {
+  padding: 8px;
+  border-bottom: none;
+}
+
+.waypoint-panel h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.waypoint-panel .collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.waypoint-panel .empty-msg {
+  padding: 16px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.waypoint-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.waypoint-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.waypoint-item:hover {
+  background: #f5f5f5;
+}
+
+.waypoint-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.waypoint-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.waypoint-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.waypoint-notes {
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-waypoint-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px 6px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.waypoint-item:hover .delete-waypoint-btn {
+  opacity: 1;
+}
+
+.delete-waypoint-btn:hover {
+  color: #d32f2f;
+}
+
+.clear-all-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 12px 16px;
+  padding: 8px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+}
+
+.clear-all-btn:hover {
+  background: #eee;
+  color: #333;
+}
+
+/* Waypoint Marker */
+.waypoint-marker {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+  transition: transform 0.15s;
+}
+
+.waypoint-marker:hover {
+  transform: scale(1.1);
+}
+
+/* Waypoint Dialog */
+.waypoint-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.waypoint-dialog {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 360px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.waypoint-dialog h3 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.waypoint-dialog .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.waypoint-dialog .form-group {
+  margin-bottom: 16px;
+}
+
+.waypoint-dialog label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+}
+
+.waypoint-dialog input[type="text"],
+.waypoint-dialog textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.waypoint-dialog input[type="text"]:focus,
+.waypoint-dialog textarea:focus {
+  outline: none;
+  border-color: #1565c0;
+}
+
+.waypoint-dialog .copy-btn {
+  background: none;
+  border: none;
+  color: #1565c0;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.coords-display {
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.icon-btn:hover {
+  border-color: #999;
+}
+
+.icon-btn.selected {
+  border-color: #1565c0;
+  background: #e3f2fd;
+}
+
+.color-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.selected {
+  border-color: #000;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.dialog-actions button {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.save-btn {
+  background: #1565c0;
+  color: white;
+  border: none;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #0d47a1;
+}
+
+.save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background: white;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #f5f5f5;
+}
+
+.delete-btn {
+  background: white;
+  border: 1px solid #d32f2f;
+  color: #d32f2f;
+  flex: 0;
+}
+
+.delete-btn:hover {
+  background: #ffebee;
+}
