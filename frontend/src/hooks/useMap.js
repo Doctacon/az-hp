@@ -10,6 +10,7 @@ maplibregl.prewarm()
 export function useMap(containerRef) {
   const mapRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [map, setMap] = useState(null)
 
   useEffect(() => {
     if (mapRef.current || !containerRef.current) return
@@ -21,6 +22,7 @@ export function useMap(containerRef) {
     })
 
     mapRef.current.on('load', () => {
+      setMap(mapRef.current)
       setIsLoaded(true)
     })
 
@@ -30,5 +32,5 @@ export function useMap(containerRef) {
     }
   }, [containerRef])
 
-  return { map: mapRef.current, isLoaded }
+  return { map, isLoaded }
 }
