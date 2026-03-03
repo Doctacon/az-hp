@@ -1,6 +1,6 @@
 {
   "ok": false,
-  "ts": "2026-02-23T04:00:15.456Z",
+  "ts": "2026-03-03T04:05:50.114Z",
   "applied": false,
   "exit_code": 2,
   "stdout": "{\"code\": \"ARGPARSE\", \"error\": \"argument cmd: invalid choice: 'learn' (choose from 'init', 'sync', 'instincts-update', 'instinct-status', 'instinct-export', 'instinct-import', 'evolve', 'observer', 'prime', 'claude-hook', 'opencode-hook', 'omp-hook')\", \"hint\": \"Run: loom compound -h\", \"ok\": false}\n",

@@ -165,11 +165,68 @@ def filter_hunt_pois():
         return False
 
     places["hunt_relevant"] = places.apply(is_hunt_relevant, axis=1)
-    hunt_places = places[places["hunt_relevant"]]
+    hunt_places = places[places["hunt_relevant"]].copy()
+
+    def extract_place_name(row):
+        names = row.get("names")
+        if names is None:
+            return None
+        if isinstance(names, dict):
+            return names.get("primary")
+        if isinstance(names, str):
+            try:
+                parsed = json.loads(names)
+                return parsed.get("primary")
+            except:
+                return names
+        return None
+
+    hunt_places["name"] = hunt_places.apply(extract_place_name, axis=1)
 
     output_path = PROCESSED_DIR / "places_hunt.parquet"
     hunt_places.to_parquet(output_path)
     print(f"  Saved {len(hunt_places)} hunt-relevant POIs to {output_path}")
+
+
+def process_water_features():
+    output_path = PROCESSED_DIR / "water_named.parquet"
+    if output_path.exists() and output_path.stat().st_size > 10_000:
+        print("Water already processed, skipping.")
+        return
+
+    print("Processing water features with names...")
+
+    input_path = PROCESSED_DIR / "overture_water_clipped.parquet"
+    if not input_path.exists():
+        print("  Water data not found, skipping.")
+        return
+
+    water = gpd.read_parquet(input_path)
+    water = water.to_crs("EPSG:4326")
+
+    def extract_water_name(row):
+        names = row.get("names")
+        if names is None:
+            return None
+        if isinstance(names, dict):
+            return names.get("primary")
+        if isinstance(names, str):
+            try:
+                parsed = json.loads(names)
+                return parsed.get("primary")
+            except:
+                return names
+        return None
+
+    water["name"] = water.apply(extract_water_name, axis=1)
+
+    water_named = water[water["name"].notna()].copy()
+
+    if len(water_named) > 0:
+        water_named.to_parquet(output_path)
+        print(f"  Saved {len(water_named)} named water features to {output_path}")
+    else:
+        print("  No named water features found.")
 
 
 def prepare_static_layers():
@@ -200,6 +257,7 @@ def main():
 
     enrich_roads()
     filter_hunt_pois()
+    process_water_features()
     prepare_static_layers()
 
     print("=" * 60)

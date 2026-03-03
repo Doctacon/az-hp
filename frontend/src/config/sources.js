@@ -14,6 +14,10 @@ export const SOURCES = {
     type: 'vector',
     url: `pmtiles://${TILE_BASE}/places.pmtiles`,
   },
+  water: {
+    type: 'vector',
+    url: `pmtiles://${TILE_BASE}/water.pmtiles`,
+  },
   'hunt-units': {
     type: 'vector',
     url: `pmtiles://${TILE_BASE}/hunt-units.pmtiles`,

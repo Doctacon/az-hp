@@ -81,6 +81,9 @@ PID1=$!
 generate_tiles_parquet "places_hunt" "places" 8 14 "-r1" &
 PID2=$!
 
+generate_tiles_parquet "water_named" "water" 8 14 "-r1" &
+PID5=$!
+
 generate_tiles_geojson "hunt_units" "hunt-units" 6 14 "--no-tile-size-limit" &
 PID3=$!
 
@@ -90,12 +93,13 @@ PID4=$!
 echo "Waiting for tile generation to complete..."
 wait $PID1 || echo "  roads had issues"
 wait $PID2 || echo "  places had issues"
+wait $PID5 || echo "  water had issues"
 wait $PID3 || echo "  hunt-units had issues"
 wait $PID4 || echo "  land-ownership had issues"
 
 echo ""
 echo "Copying PMTiles to frontend..."
-for f in roads places hunt-units land-ownership; do
+for f in roads places water hunt-units land-ownership; do
     if [ -f "$TILES_DIR/${f}.pmtiles" ]; then
         cp "$TILES_DIR/${f}.pmtiles" "$FRONTEND_DATA/"
         echo "  Copied ${f}.pmtiles"

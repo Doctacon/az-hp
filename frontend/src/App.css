@@ -15,16 +15,40 @@
   left: 12px;
   background: white;
   border-radius: 8px;
-  padding: 16px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   max-width: 220px;
   font-size: 14px;
   z-index: 1;
+  transition: width 0.2s ease, padding 0.2s ease;
+}
+
+.layer-panel.collapsed {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.layer-panel .panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.layer-panel.collapsed .panel-header {
+  padding: 8px;
 }
 
 .layer-panel h3 {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 16px;
+}
+
+.layer-panel .collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
 }
 
 .layer-toggle {
@@ -33,6 +57,32 @@
   gap: 8px;
   padding: 4px 0;
   cursor: pointer;
+}
+
+.layer-item {
+  margin-bottom: 4px;
+  padding: 0 16px;
+}
+
+.opacity-slider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 22px;
+  margin-top: 2px;
+}
+
+.opacity-slider input[type="range"] {
+  flex: 1;
+  height: 4px;
+  cursor: pointer;
+}
+
+.opacity-value {
+  font-size: 11px;
+  color: #666;
+  min-width: 32px;
+  text-align: right;
 }
 
 .color-swatch,
@@ -46,7 +96,7 @@
 
 .legend {
   margin-top: 16px;
-  padding-top: 12px;
+  padding: 12px 16px 0;
   border-top: 1px solid #eee;
 }
 
@@ -121,7 +171,7 @@
 /* Waypoint Panel */
 .waypoint-panel {
   position: absolute;
-  bottom: 12px;
+  bottom: 50px;
   left: 12px;
   background: white;
   border-radius: 8px;
@@ -472,4 +522,323 @@
 
 .delete-btn:hover {
   background: #ffebee;
+}
+
+/* Measure Panel */
+.measure-panel {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  z-index: 1;
+  min-width: 120px;
+}
+
+.measure-panel.active {
+  min-width: 180px;
+}
+
+.measure-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  gap: 12px;
+}
+
+.measure-header h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.measure-toggle-btn {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.measure-toggle-btn:hover {
+  background: #e0e0e0;
+}
+
+.measure-toggle-btn.active {
+  background: #1565c0;
+  color: white;
+  border-color: #1565c0;
+}
+
+.measure-content {
+  padding: 0 14px 14px;
+  border-top: 1px solid #eee;
+}
+
+.measure-distance,
+.measure-points {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.measure-label {
+  color: #666;
+  font-size: 13px;
+}
+
+.measure-value {
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.measure-clear-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+}
+
+.measure-clear-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.measure-hint {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+}
+
+/* Path Panel */
+.path-panel {
+  position: absolute;
+  bottom: 70px;
+  left: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  z-index: 1;
+  max-width: 280px;
+  max-height: 350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.2s ease, padding 0.2s ease;
+}
+
+.path-panel.collapsed {
+  max-width: 50px;
+  max-height: 50px;
+  bottom: 100px;
+}
+
+.path-panel .panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.path-panel.collapsed .panel-header {
+  padding: 8px;
+  border-bottom: none;
+}
+
+.path-panel h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.path-panel .collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.path-panel .empty-msg {
+  padding: 16px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.draw-controls {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.draw-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.draw-btn:hover {
+  background: #0d47a1;
+}
+
+.drawing-status {
+  text-align: center;
+  padding: 8px 0;
+  color: #1565c0;
+  font-weight: 500;
+}
+
+.drawing-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.finish-btn {
+  flex: 1;
+  padding: 8px 12px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.finish-btn:hover:not(:disabled) {
+  background: #1b5e20;
+}
+
+.finish-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cancel-draw-btn {
+  flex: 1;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.cancel-draw-btn:hover {
+  background: #e0e0e0;
+}
+
+.path-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.path-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.path-item:hover {
+  background: #f5f5f5;
+}
+
+.path-color-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.path-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.path-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.path-name:hover {
+  color: #1565c0;
+}
+
+.path-name-input {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid #1565c0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.path-distance {
+  font-size: 11px;
+  color: #666;
+}
+
+.path-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.path-item:hover .path-actions {
+  opacity: 1;
+}
+
+.export-btn {
+  background: none;
+  border: none;
+  color: #1565c0;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 2px 6px;
+}
+
+.export-btn:hover {
+  color: #0d47a1;
+}
+
+.delete-path-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px 6px;
+}
+
+.delete-path-btn:hover {
+  color: #d32f2f;
 }

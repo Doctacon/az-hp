@@ -115,7 +115,7 @@ function addBasemapLabelLayers(map) {
   })
 }
 
-export function useMapLayers(map, isLoaded, visibility) {
+export function useMapLayers(map, isLoaded, visibility, opacity) {
   const demSourceRef = useRef(null)
   
   useEffect(() => {
@@ -143,4 +143,51 @@ export function useMapLayers(map, isLoaded, visibility) {
       })
     })
   }, [map, isLoaded, visibility])
+
+  useEffect(() => {
+    if (!map || !isLoaded) return
+
+    const opacityValue = (key) => (opacity[key] ?? 100) / 100
+
+    if (map.getLayer('hillshade')) {
+      map.setPaintProperty('hillshade', 'hillshade-exaggeration', opacityValue('terrain') * 0.3)
+    }
+    if (map.getLayer('contour-lines')) {
+      map.setPaintProperty('contour-lines', 'line-opacity', opacityValue('terrain'))
+    }
+    if (map.getLayer('land-ownership-fill')) {
+      map.setPaintProperty('land-ownership-fill', 'fill-opacity', opacityValue('landOwnership'))
+    }
+    if (map.getLayer('land-ownership-outline')) {
+      map.setPaintProperty('land-ownership-outline', 'line-opacity', opacityValue('landOwnership'))
+    }
+    if (map.getLayer('hunt-units-fill')) {
+      map.setPaintProperty('hunt-units-fill', 'fill-opacity', opacityValue('huntUnits') * 0.2)
+    }
+    if (map.getLayer('hunt-units-outline')) {
+      map.setPaintProperty('hunt-units-outline', 'line-opacity', opacityValue('huntUnits'))
+    }
+    if (map.getLayer('hunt-units-labels')) {
+      map.setPaintProperty('hunt-units-labels', 'text-opacity', opacityValue('huntUnits'))
+    }
+    if (map.getLayer('roads-line')) {
+      map.setPaintProperty('roads-line', 'line-opacity', opacityValue('roads'))
+    }
+    if (map.getLayer('roads-labels')) {
+      map.setPaintProperty('roads-labels', 'text-opacity', opacityValue('roads'))
+    }
+    if (map.getLayer('places-circle')) {
+      map.setPaintProperty('places-circle', 'circle-opacity', opacityValue('places'))
+      map.setPaintProperty('places-circle', 'circle-stroke-opacity', opacityValue('places'))
+    }
+    if (map.getLayer('places-labels')) {
+      map.setPaintProperty('places-labels', 'text-opacity', opacityValue('places'))
+    }
+    if (map.getLayer('water-line')) {
+      map.setPaintProperty('water-line', 'line-opacity', opacityValue('water') * 0.7)
+    }
+    if (map.getLayer('water-labels')) {
+      map.setPaintProperty('water-labels', 'text-opacity', opacityValue('water'))
+    }
+  }, [map, isLoaded, opacity])
 }

@@ -88,6 +88,36 @@ def download_overture_places():
     print("  Places saved.")
 
 
+def download_overture_water():
+    output_path = RAW_DIR / "overture_water_az.parquet"
+    if file_exists(output_path, min_size_mb=1):
+        print("  Water already downloaded, skipping.")
+        return
+
+    print("Downloading Overture water features...")
+    con = duckdb.connect()
+    con.execute("INSTALL spatial; LOAD spatial;")
+    con.execute("INSTALL httpfs; LOAD httpfs;")
+    con.execute("SET s3_region = 'us-west-2';")
+
+    con.execute(f"""
+        COPY (
+            SELECT id, geometry, names, subtype, class, is_intermittent
+            FROM read_parquet(
+                '{OVERTURE_S3_BASE}/theme=base/type=water/*',
+                hive_partitioning=true
+            )
+            WHERE bbox.xmin >= {AZ_BBOX['xmin']}
+              AND bbox.xmax <= {AZ_BBOX['xmax']}
+              AND bbox.ymin >= {AZ_BBOX['ymin']}
+              AND bbox.ymax <= {AZ_BBOX['ymax']}
+              AND names IS NOT NULL
+        ) TO '{output_path}'
+        (FORMAT PARQUET);
+    """)
+    print("  Water features saved.")
+
+
 def download_azgfd_gmus():
     output_path = RAW_DIR / "azgfd_gmu.geojson"
     if file_exists(output_path, min_size_mb=1):
@@ -259,6 +289,7 @@ def main():
     download_blm_sma()
     download_overture_transportation()
     download_overture_places()
+    download_overture_water()
 
     print("=" * 60)
     print("Download complete!")

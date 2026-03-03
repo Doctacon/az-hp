@@ -1,9 +1,10 @@
 export const LAYER_GROUPS = {
   terrain: ['hillshade', 'contour-lines'],
-  roads: ['roads-line'],
+  roads: ['roads-line', 'roads-labels'],
   landOwnership: ['land-ownership-fill', 'land-ownership-outline'],
   huntUnits: ['hunt-units-fill', 'hunt-units-outline', 'hunt-units-labels'],
-  places: ['places-circle'],
+  places: ['places-circle', 'places-labels'],
+  water: ['water-line', 'water-labels'],
 }
 
 export const DEFAULT_VISIBILITY = {
@@ -12,6 +13,16 @@ export const DEFAULT_VISIBILITY = {
   landOwnership: true,
   huntUnits: true,
   places: true,
+  water: true,
+}
+
+export const DEFAULT_OPACITY = {
+  terrain: 30,
+  roads: 80,
+  landOwnership: 25,
+  huntUnits: 5,
+  places: 100,
+  water: 100,
 }
 
 export const CONTOUR_LAYERS = [
@@ -123,6 +134,27 @@ export const OVERLAY_LAYERS = [
     },
   },
   {
+    id: 'roads-labels',
+    type: 'symbol',
+    source: 'roads',
+    'source-layer': 'roads',
+    group: 'roads',
+    minzoom: 12,
+    layout: {
+      'text-field': ['get', 'road_name'],
+      'text-size': 11,
+      'text-font': ['Noto Sans Regular'],
+      'symbol-placement': 'line',
+      'text-max-angle': 30,
+      'text-rotation-alignment': 'map',
+    },
+    paint: {
+      'text-color': '#333',
+      'text-halo-color': '#fff',
+      'text-halo-width': 1.5,
+    },
+  },
+  {
     id: 'places-circle',
     type: 'circle',
     source: 'places',
@@ -134,6 +166,27 @@ export const OVERLAY_LAYERS = [
       'circle-color': '#1565c0',
       'circle-stroke-width': 1.5,
       'circle-stroke-color': '#fff',
+    },
+  },
+  {
+    id: 'places-labels',
+    type: 'symbol',
+    source: 'places',
+    'source-layer': 'places',
+    group: 'places',
+    minzoom: 11,
+    layout: {
+      'text-field': ['get', 'name'],
+      'text-size': 11,
+      'text-font': ['Noto Sans Regular'],
+      'text-anchor': 'left',
+      'text-offset': [0.8, 0],
+      'text-optional': true,
+    },
+    paint: {
+      'text-color': '#1565c0',
+      'text-halo-color': '#fff',
+      'text-halo-width': 1.5,
     },
   },
   {
@@ -152,6 +205,39 @@ export const OVERLAY_LAYERS = [
       'text-color': '#b71c1c',
       'text-halo-color': '#fff',
       'text-halo-width': 2,
+    },
+  },
+  {
+    id: 'water-line',
+    type: 'line',
+    source: 'water',
+    'source-layer': 'water',
+    group: 'water',
+    minzoom: 9,
+    paint: {
+      'line-color': '#2196f3',
+      'line-width': 2,
+      'line-opacity': 0.7,
+    },
+  },
+  {
+    id: 'water-labels',
+    type: 'symbol',
+    source: 'water',
+    'source-layer': 'water',
+    group: 'water',
+    minzoom: 10,
+    layout: {
+      'text-field': ['get', 'name'],
+      'text-size': 11,
+      'text-font': ['Noto Sans Italic'],
+      'symbol-placement': 'line',
+      'text-max-angle': 30,
+    },
+    paint: {
+      'text-color': '#1565c0',
+      'text-halo-color': '#fff',
+      'text-halo-width': 1.5,
     },
   },
 ]

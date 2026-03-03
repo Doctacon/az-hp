@@ -62,6 +62,7 @@ def main():
     layers = [
         ("overture_transportation_az", "overture_transportation_clipped"),
         ("overture_places_az", "overture_places_clipped"),
+        ("overture_water_az", "overture_water_clipped"),
     ]
 
     for input_name, output_name in layers:
